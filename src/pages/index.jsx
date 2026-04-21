@@ -111,7 +111,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
                     d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
                   />
                 </svg>
-                Contrato · borrador.docx
+                Apelación · borrador.docx
               </span>
               <span style="margin-left: auto">docs.google.com</span>
             </div>
