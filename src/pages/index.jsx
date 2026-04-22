@@ -816,7 +816,7 @@ const structuredData = {
       url: "https://extensionlenguajeclaro.com.ar/",
       name: "Lenguaje Claro",
       description:
-        "Sitio oficial de Lenguaje Claro, una extensión de Chrome para Google Docs cuyas reglas se ejecutan localmente y que usa solo Google OAuth y Google Docs API para leer el documento activo y aplicar cambios confirmados por el usuario.",
+        "Extensión para Chrome de Lenguaje Claro. Edita textos jurídicos en Google Docs.",
       inLanguage: "es-AR",
     },
     {
@@ -829,7 +829,7 @@ const structuredData = {
       browserRequirements:
         "Google Chrome o navegadores compatibles con extensiones de Chrome",
       description:
-        "Extensión de Chrome para Google Docs que revisa la escritura jurídica en Google Docs.",
+        "Extensión para Chrome de Lenguaje Claro. Edita textos jurídicos en Google Docs.",
       image: "https://extensionlenguajeclaro.com.ar/assets/og-image.png",
       screenshot: "https://extensionlenguajeclaro.com.ar/assets/screenshot.png",
       inLanguage: "es-AR",
@@ -853,7 +853,7 @@ export default function IndexPage() {
       author="Guillermo Perez"
       canonical="https://extensionlenguajeclaro.com.ar/"
       ogTitle="Lenguaje Claro — Escritura jurídica que se entiende"
-      ogDescription="Extensión de Chrome que mejora la redacción jurídica en Google Docs. Detecta arcaísmos, títulos honoríficos, siglas con puntos, voz pasiva y más."
+      ogDescription="Extensión para Chrome que mejora la redacción jurídica en Google Docs. Detecta arcaísmos, rodeos, títulos honoríficos, siglas, voz pasiva y más."
       twitterTitle="Lenguaje Claro — Escritura jurídica que se entiende"
       twitterDescription="Extensión de Chrome para Google Docs que detecta arcaísmos, títulos honoríficos, siglas con puntos y otros problemas de estilo en textos jurídicos."
       structuredData={structuredData}
