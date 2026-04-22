@@ -857,6 +857,7 @@ export default function IndexPage() {
       twitterTitle="Lenguaje Claro — Escritura jurídica que se entiende"
       twitterDescription="Extensión de Chrome para Google Docs que detecta arcaísmos, títulos honoríficos, siglas con puntos y otros problemas de estilo en textos jurídicos."
       structuredData={structuredData}
+      extraHead={<link rel="stylesheet" href="index.css" />}
       afterBody={
         <>
           <script
