@@ -2,7 +2,10 @@
 /** @jsxFrag Fragment */
 
 import { Fragment, h } from "preact";
-import Document, { InlineStyle } from "../components/Document.jsx";
+import Document, {
+  InlineScript,
+  InlineStyle,
+} from "../components/Document.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import SharedScripts from "../components/SharedScripts.jsx";
@@ -60,6 +63,8 @@ const ruleCopy = {
       "Siglas escritas con puntos que pueden normalizarse a la forma compacta.",
   },
 };
+
+const EXAMPLES_PER_RULE = 12;
 
 const examplesStyles = String.raw`.examples-hero {
         padding-block: clamp(48px, 8vw, 92px) clamp(34px, 5vw, 58px);
@@ -121,6 +126,35 @@ const examplesStyles = String.raw`.examples-hero {
         text-transform: uppercase;
         color: var(--ink-3);
       }
+      .examples-demo-wrap {
+        padding-block: clamp(34px, 6vw, 58px) 0;
+      }
+      .examples-demo-card {
+        width: 100%;
+      }
+      .examples-demo-card .demo-bar {
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+      .examples-demo-card .demo-host {
+        margin-left: auto;
+      }
+      .examples-demo-card .demo-body {
+        min-height: clamp(260px, 28vw, 360px);
+        padding: clamp(28px, 4vw, 44px);
+        font-size: clamp(18px, 2vw, 24px);
+        line-height: 1.7;
+      }
+      .examples-demo-card .demo-body p {
+        max-width: none;
+      }
+      .examples-demo-card .demo-count {
+        top: 14px;
+        right: 20px;
+      }
+      .examples-demo-card .popover {
+        width: min(320px, calc(100% - 20px));
+      }
       .examples-shell {
         display: grid;
         grid-template-columns: 240px minmax(0, 1fr);
@@ -148,7 +182,7 @@ const examplesStyles = String.raw`.examples-hero {
       }
       .examples-sidebar a {
         display: grid;
-        grid-template-columns: 28px minmax(0, 1fr) auto;
+        grid-template-columns: 28px minmax(0, 1fr);
         gap: 8px;
         align-items: baseline;
         padding: 7px 0;
@@ -160,10 +194,6 @@ const examplesStyles = String.raw`.examples-hero {
       }
       .examples-sidebar .snum {
         color: var(--accent);
-      }
-      .examples-sidebar .count {
-        color: var(--ink-3);
-        font-size: 13px;
       }
       .examples-rules {
         display: flex;
@@ -369,6 +399,22 @@ const examplesStyles = String.raw`.examples-hero {
         }
       }
       @media (max-width: 680px) {
+        .examples-demo-wrap {
+          padding-top: 24px;
+        }
+        .examples-demo-card .demo-bar {
+          align-items: flex-start;
+        }
+        .examples-demo-card .demo-host {
+          flex-basis: 100%;
+          margin-left: 0;
+        }
+        .examples-demo-card .demo-body {
+          min-height: 360px;
+          padding: 46px 20px 26px;
+          font-size: 17px;
+          line-height: 1.68;
+        }
         .examples-sidebar nav {
           grid-template-columns: 1fr;
         }
@@ -440,16 +486,117 @@ function getMetrics(reglas) {
     (metrics, regla) => {
       const rows = getRows(regla);
       metrics.rules += 1;
-      metrics.examples += rows.length;
-      metrics.direct += rows.filter((row) => row.applicable).length;
+      metrics.examples += Math.min(rows.length, EXAMPLES_PER_RULE);
       return metrics;
     },
-    { rules: 0, examples: 0, direct: 0 },
+    { rules: 0, examples: 0 },
   );
 }
 
 function formatNumber(value) {
   return new Intl.NumberFormat("es-AR").format(value);
+}
+
+const examplesDemoSequence = [
+  { t: "Ante el " },
+  { lookup: "honorable tribunal", text: "honorable tribunal" },
+  { t: ", solicito a " },
+  { lookup: "V.S.", text: "V.S." },
+  { t: " que, " },
+  { lookup: "en el momento actual", text: "en el momento actual" },
+  { t: ", se autorice " },
+  {
+    lookup: "proceder a la interposición",
+    text: "proceder a la interposición",
+  },
+  { t: " del recurso previsto en el Capítulo " },
+  { lookup: "Capítulo IV", text: "IV", from: "IV" },
+  { t: ". " },
+  {
+    lookup: "La medida fue aprobada por el Senado",
+    text: "La medida fue aprobada por el Senado",
+  },
+  { t: " sin " },
+  { lookup: "poner de manifiesto", text: "poner de manifiesto" },
+  { t: " los fundamentos. No corresponde " },
+  { lookup: "afirmar de que", text: "afirmar de que" },
+  { t: " la " },
+  { lookup: "mora", text: "mora" },
+  { t: " generó " },
+  { lookup: "mucho", text: "mucho" },
+  { t: " perjuicio; por eso pido revisar el informe " },
+  { lookup: "U.N.E.S.C.O", text: "U.N.E.S.C.O" },
+  { t: " " },
+  { lookup: "in fine", text: "in fine" },
+  { t: "." },
+];
+
+function normalizeLookup(value) {
+  return String(value || "").toLocaleLowerCase("es-AR");
+}
+
+function findDemoHallazgo(reglas, lookup) {
+  const target = normalizeLookup(lookup);
+
+  for (const regla of reglas) {
+    for (const ejemplo of regla.ejemplos || []) {
+      for (const hallazgo of ejemplo.hallazgos || []) {
+        const candidates = [ejemplo.texto, hallazgo.textoDetectado].map(
+          normalizeLookup,
+        );
+
+        if (candidates.includes(target)) {
+          return { regla, ejemplo, hallazgo };
+        }
+      }
+    }
+  }
+
+  throw new Error(
+    `No se encontró el hallazgo "${lookup}" en src/pages/ejemplos.json`,
+  );
+}
+
+function buildExamplesDemoSegments(reglas) {
+  let markIndex = 0;
+
+  return examplesDemoSequence.map((segment) => {
+    if (segment.t) return segment;
+
+    const { regla, ejemplo, hallazgo } = findDemoHallazgo(
+      reglas,
+      segment.lookup,
+    );
+    const suggestions = Array.isArray(hallazgo.sugerencias)
+      ? hallazgo.sugerencias
+      : [];
+    const firstSuggestion = suggestions[0] || "";
+
+    if (!firstSuggestion) {
+      throw new Error(
+        `El hallazgo "${segment.lookup}" no tiene sugerencias en src/pages/ejemplos.json`,
+      );
+    }
+
+    markIndex += 1;
+
+    return {
+      m: `examples-${markIndex}`,
+      kind: regla.id,
+      text: segment.text || hallazgo.textoDetectado || ejemplo.texto,
+      from: segment.from || hallazgo.textoDetectado || ejemplo.texto,
+      to: firstSuggestion,
+      label: getRuleTitle(regla),
+      color: regla.color || "var(--accent)",
+      applicable: hallazgo.aplicable === true,
+      suggestions,
+      description: hallazgo.descripcion || getRuleDescription(regla),
+    };
+  });
+}
+
+function serializeForInlineScript(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
 }
 
 function StatusBadge({ applicable, tooltip }) {
@@ -471,17 +618,12 @@ function Sidebar({ reglas }) {
     <aside className="examples-sidebar">
       <nav aria-label="Índice de reglas">
         <div className="sidebar-section">Reglas</div>
-        {reglas.map((regla, index) => {
-          const rows = getRows(regla);
-
-          return (
-            <a key={regla.id} href={`#${regla.id}`}>
-              <span className="snum">{String(index + 1).padStart(2, "0")}</span>
-              <span>{getRuleTitle(regla)}</span>
-              <span className="count">{rows.length}</span>
-            </a>
-          );
-        })}
+        {reglas.map((regla, index) => (
+          <a key={regla.id} href={`#${regla.id}`}>
+            <span className="snum">{String(index + 1).padStart(2, "0")}</span>
+            <span>{getRuleTitle(regla)}</span>
+          </a>
+        ))}
       </nav>
     </aside>
   );
@@ -495,8 +637,7 @@ function EjemploTabla({ regla, rows }) {
         <thead>
           <tr>
             <th className="col-text">Texto marcado</th>
-            <th className="col-suggestions">Sugerencia</th>
-            <th className="col-notes">Criterio</th>
+            <th className="col-suggestions">Sugerencias</th>
           </tr>
         </thead>
         <tbody>
@@ -523,14 +664,6 @@ function EjemploTabla({ regla, rows }) {
                   ))}
                 </ul>
               </td>
-              <td data-label="Criterio">
-                <div className="examples-note">
-                  <StatusBadge
-                    applicable={row.applicable}
-                    tooltip={row.description}
-                  />
-                </div>
-              </td>
             </tr>
           ))}
         </tbody>
@@ -551,10 +684,7 @@ function RuleSection({ regla, index }) {
       <div className="examples-rule-head">
         <div className="examples-rule-meta">
           <span className="examples-rule-dot" aria-hidden="true"></span>
-          <span>
-            {String(index + 1).padStart(2, "0")} · {formatNumber(rows.length)}{" "}
-            ejemplos
-          </span>
+          <span>{String(index + 1).padStart(2, "0")} · muestra aleatoria</span>
         </div>
         <h2>{getRuleTitle(regla)}</h2>
         <p>{getRuleDescription(regla)}</p>
@@ -566,6 +696,57 @@ function RuleSection({ regla, index }) {
 
 const reglas = Array.isArray(ejemplosData.reglas) ? ejemplosData.reglas : [];
 const metrics = getMetrics(reglas);
+const examplesDemoSegments = buildExamplesDemoSegments(reglas);
+const examplesPageScript = String.raw`
+(function () {
+  const sampleSize = ${EXAMPLES_PER_RULE};
+
+  function shuffle(items) {
+    const shuffled = items.slice();
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[swapIndex]] = [
+        shuffled[swapIndex],
+        shuffled[index],
+      ];
+    }
+
+    return shuffled;
+  }
+
+  document.querySelectorAll(".examples-table tbody").forEach(function (tbody) {
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    if (rows.length <= sampleSize) return;
+
+    const selected = shuffle(
+      rows.map(function (row, index) {
+        return { row, index };
+      }),
+    )
+      .slice(0, sampleSize)
+      .sort(function (a, b) {
+        return a.index - b.index;
+      });
+
+    tbody.replaceChildren(
+      ...selected.map(function (entry) {
+        return entry.row;
+      }),
+    );
+  });
+
+  const body = document.getElementById("examples-demo-body");
+  if (!body || !window.LenguajeClaroDemo) return;
+
+  window.LenguajeClaroDemo.init({
+    body,
+    segments: ${serializeForInlineScript(examplesDemoSegments)},
+    autoCycle: false,
+    openOnHover: true,
+  });
+})();
+`.trim();
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -592,7 +773,13 @@ export default function Ejemplos() {
       twitterDescription="Ejemplos concretos de las reglas de Lenguaje Claro para Google Docs."
       structuredData={structuredData}
       extraHead={<InlineStyle css={examplesStyles} />}
-      afterBody={<SharedScripts />}
+      afterBody={
+        <>
+          <SharedScripts />
+          <script src="demo.js"></script>
+          <InlineScript code={examplesPageScript} />
+        </>
+      }
     >
       <Header />
       <main>
@@ -601,13 +788,13 @@ export default function Ejemplos() {
             <span className="dot"></span> Catálogo de reglas
           </span>
           <h1>
-            Ejemplos de texto detectado por la extensión <em>Lenguaje Claro</em>
+            Ejemplos de texto remarcado por la extensión <em>Lenguaje Claro</em>
             .
           </h1>
           <p className="examples-lede">
-            Cada tabla muestra el texto que detecta la extensión, la alternativa
-            que propone y el criterio de revisión. Algunas sugerencias son
-            reemplazos directos; otras piden completar información precisa.
+            Hasta doce ejemplos al azar de cada categoría, y las alternativas
+            que se proponen. Algunas sugerencias permiten reemplazos directos;
+            otras solo llamados de atención.
           </p>
 
           <div className="examples-stats" aria-label="Resumen de ejemplos">
@@ -617,12 +804,42 @@ export default function Ejemplos() {
             </div>
             <div className="examples-stat">
               <strong>{formatNumber(metrics.examples)}</strong>
-              <span>Casos de ejemplo</span>
+              <span>Casos visibles</span>
             </div>
             <div className="examples-stat">
-              <strong>{formatNumber(metrics.direct)}</strong>
-              <span>Reemplazos directos</span>
+              <strong>{formatNumber(EXAMPLES_PER_RULE)}</strong>
+              <span>Máximo por regla</span>
             </div>
+          </div>
+        </section>
+
+        <section
+          className="wrap examples-demo-wrap"
+          aria-label="Demostración de sugerencias"
+        >
+          <div id="examples-demo" className="demo-card examples-demo-card">
+            <div className="demo-bar">
+              <span className="traffic" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span className="tab">
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style={{ color: "#4285f4" }}
+                  aria-hidden="true"
+                >
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                </svg>
+                Recurso · ejemplo.docx
+              </span>
+              <span className="demo-host">ejemplos.json</span>
+            </div>
+            <div className="demo-body" id="examples-demo-body"></div>
           </div>
         </section>
 

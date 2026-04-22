@@ -17,6 +17,7 @@ export default function Header() {
         </a>
         <div className="nav-links">
           <a href="index.html#features">Reglas</a>
+          <a href="ejemplos.html">Ejemplos</a>
           <a href="index.html#comparacion" className="nav-link-hide-sm">
             Comparación
           </a>

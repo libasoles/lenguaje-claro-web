@@ -622,6 +622,31 @@ h1.hero-title .under::after {
   font-size: 12px;
   font-weight: 500;
 }
+.popover .pop-alternatives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.popover .pop-alternatives span {
+  flex-basis: 100%;
+}
+.popover .pop-alternatives button {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg-elev);
+  color: var(--ink-2);
+  padding: 4px 6px;
+  font: inherit;
+  cursor: pointer;
+}
+.popover .pop-description {
+  margin-top: 8px;
+  color: var(--ink-3);
+  font-size: 12px;
+}
 .popover .pop-apply {
   margin-top: 10px;
   width: 100%;
