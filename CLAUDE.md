@@ -100,3 +100,7 @@ Se puede hacer con sips:
 Si se quiere cubrir el canal alpha con black:
 
 `sips -z 630 1200 --padColor 000000 input.png --out output.png`
+
+Para mayor calidad:
+
+`magick entrada.png -resize 1200x630 -filter Lanczos -sharpen 0x1 salida.png`
