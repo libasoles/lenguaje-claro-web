@@ -8,7 +8,6 @@ import Document, {
 } from "../components/Document.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
-import SharedScripts from "../components/SharedScripts.jsx";
 import ejemplosData from "./ejemplos.json";
 
 const ruleCopy = {
@@ -775,7 +774,6 @@ export default function Ejemplos() {
       extraHead={<InlineStyle css={examplesStyles} />}
       afterBody={
         <>
-          <SharedScripts />
           <script src="demo.js"></script>
           <InlineScript code={examplesPageScript} />
         </>

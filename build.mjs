@@ -3,7 +3,7 @@ import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { h } from "preact";
-import render from "preact-render-to-string";
+import { render } from "preact-render-to-string";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

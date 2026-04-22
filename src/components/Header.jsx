@@ -7,7 +7,11 @@ export default function Header() {
   return (
     <nav className="nav">
       <div className="wrap nav-inner">
-        <a className="brand" href="index.html" aria-label="Lenguaje Claro — inicio">
+        <a
+          className="brand"
+          href="index.html"
+          aria-label="Lenguaje Claro — inicio"
+        >
           <span className="brand-mark" aria-hidden="true">
             <img src="assets/logo.svg" alt="" />
           </span>
@@ -15,6 +19,17 @@ export default function Header() {
             Lenguaje <em>Claro</em>
           </span>
         </a>
+
+        <button
+          className="nav-hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span className="hamburger-box" aria-hidden="true">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+
         <div className="nav-links">
           <a href="index.html#features">Reglas</a>
           <a href="ejemplos.html">Ejemplos</a>
@@ -22,7 +37,7 @@ export default function Header() {
             Comparación
           </a>
           <a href="index.html#privacidad">Privacidad</a>
-          <span className="sep nav-link-hide-sm"></span>
+
           <button
             className="theme-toggle"
             id="theme-toggle"
@@ -62,6 +77,7 @@ export default function Header() {
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
+
           <a
             className="nav-cta"
             href="https://chromewebstore.google.com/detail/lenguaje-claro/hfjnpkphlmalfdboapcidakmdkbbelja"

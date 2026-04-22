@@ -5,7 +5,6 @@ import { Fragment, h } from "preact";
 import Document, { InlineStyle } from "../components/Document.jsx";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
-import SharedScripts from "../components/SharedScripts.jsx";
 
 const mainHtml = String.raw`<!-- HERO -->
       <div class="legal-hero wrap">
@@ -953,7 +952,6 @@ export default function LegalPage() {
       canonical="https://extensionlenguajeclaro.com.ar/legal.html"
       structuredData={structuredData}
       extraHead={<InlineStyle css={legalStyles} />}
-      afterBody={<SharedScripts />}
     >
       <Header />
       <main dangerouslySetInnerHTML={{ __html: mainHtml }} />

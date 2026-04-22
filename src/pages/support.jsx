@@ -5,7 +5,6 @@ import { Fragment, h } from "preact";
 import Document, { InlineStyle } from "../components/Document.jsx";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
-import SharedScripts from "../components/SharedScripts.jsx";
 
 const mainHtml = String.raw`<section class="support-hero">
         <div class="wrap">
@@ -465,7 +464,6 @@ export default function SupportPage() {
       twitterDescription="Página oficial de soporte de Lenguaje Claro con ayuda para instalación, permisos y funcionamiento."
       structuredData={structuredData}
       extraHead={<InlineStyle css={supportStyles} />}
-      afterBody={<SharedScripts />}
     >
       <Header />
       <main id="top" dangerouslySetInnerHTML={{ __html: mainHtml }} />

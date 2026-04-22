@@ -2,31 +2,12 @@
 /** @jsxFrag Fragment */
 
 import { Fragment, h } from "preact";
+import { useEffect } from "preact/hooks";
 
 const DEFAULT_OG_IMAGE =
   "https://extensionlenguajeclaro.com.ar/assets/og-image.png";
 const DEFAULT_OG_IMAGE_ALT =
   "Vista previa de Lenguaje Claro, una extensión de Chrome para mejorar la escritura jurídica en Google Docs.";
-
-const themeBootstrap = String.raw`
-(function () {
-  try {
-    const stored = localStorage.getItem("theme");
-    document.documentElement.dataset.theme = stored || "light";
-  } catch (error) {
-    document.documentElement.dataset.theme = "light";
-  }
-})();
-`.trim();
-
-const analyticsBootstrap = String.raw`
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-gtag("config", "G-W4QVKY0PQE");
-`.trim();
 
 export function InlineScript({ code, type }) {
   const props = type ? { type } : {};
@@ -98,10 +79,9 @@ export default function Document({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={twitterTitle} />
         <meta name="twitter:description" content={twitterDescription} />
+
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:image:alt" content={ogImageAlt} />
-
-        <InlineScript code={themeBootstrap} />
 
         <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
 
@@ -109,10 +89,95 @@ export default function Document({
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-W4QVKY0PQE"
         ></script>
-        <InlineScript code={analyticsBootstrap} />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+           window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-W4QVKY0PQE");
+        `,
+          }}
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          try {
+      const stored = localStorage.getItem("theme");
+      document.documentElement.dataset.theme = stored || "light";
+    } catch (error) {
+      document.documentElement.dataset.theme = "light";
+    }
+
+    // Toggle tema
+    window.addEventListener("DOMContentLoaded", function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", function () {
+        const next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem("theme", next);
+        } catch (error) {}
+      });
+    });
+        `,
+          }}
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          // Toggle menú hamburguesa
+    window.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".nav-hamburger");
+      const links = document.querySelector(".nav-links");
+      if (!btn || !links) return;
+
+      btn.addEventListener("click", function () {
+        const isOpen = links.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      links.addEventListener("click", function (e) {
+        const target = e.target;
+        if (target && target.tagName === "A") {
+          links.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+        `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        // Install button clicks
+           document
+             .querySelectorAll('a[href="#descargar"], a.nav-cta')
+             .forEach(function (el) {
+               el.addEventListener("click", function () {
+                 trackEvent("launch_cta_click", {
+                   event_label: el.textContent.trim(),
+                 });
+               });
+             });
+        `,
+          }}
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Geist:wght@300;400;500;600&family=Fraunces:ital,wght@0,400;0,500;1,400&display=swap"
           rel="stylesheet"
