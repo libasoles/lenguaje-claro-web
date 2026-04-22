@@ -159,8 +159,9 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
               >
               impulsa una manera de escribir para acercar el derecho a las
               personas. Esta extensión automatiza parte de ese trabajo: detecta
-              arcaísmos, rodeos y tecnicismos mientras redactás, y te sugiere
-              alternativas en lenguaje corriente.
+              arcaísmos, títulos honoríficos, siglas con puntos, rodeos y
+              tecnicismos mientras redactás, y te sugiere alternativas en
+              lenguaje corriente.
             </p>
           </div>
         </div>
@@ -187,7 +188,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           </div>
           <div class="why-cell">
             <div class="why-num">c.</div>
-            <div class="why-title">Privacidad de datos</div>
+            <div class="why-title">Tus textos son privados</div>
             <div class="why-body">
               No enviamos documentos a servidores propios ni usamos modelos de
               IA. Las reglas corren localmente y la extensión solo usa servicios
@@ -204,7 +205,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           <div class="kicker"><span class="num">02</span> Características</div>
           <div>
             <h2 class="section-title">
-              Ocho reglas que observa <em>mientras</em> escribís.
+              Diez reglas que observa <em>mientras</em> escribís.
             </h2>
             <p class="section-sub">
               Cada regla busca un tipo específico de problema y propone una
@@ -241,7 +242,32 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           </div>
 
           <div class="feat">
-            <div class="feat-head"><span class="idx">02</span> Tecnicismos</div>
+            <div class="feat-head">
+              <span class="idx">02</span> Títulos honoríficos
+            </div>
+            <h3 class="feat-title">Tratamientos ceremoniales.</h3>
+            <div class="feat-desc">
+              Señala fórmulas honoríficas o cuasi-nobiliarias y propone nombrar
+              directamente el cargo, el órgano o la institución.
+            </div>
+            <div class="feat-ex">
+              <div class="pair">
+                <span class="from">honorable tribunal</span
+                ><span class="arrow">→</span><span class="to">tribunal</span>
+              </div>
+              <div class="pair">
+                <span class="from">señora jueza</span
+                ><span class="arrow">→</span><span class="to">jueza</span>
+              </div>
+              <div class="pair">
+                <span class="from">excma. cámara</span
+                ><span class="arrow">→</span><span class="to">cámara</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feat">
+            <div class="feat-head"><span class="idx">03</span> Tecnicismos</div>
             <h3 class="feat-title">Jerga legal.</h3>
             <div class="feat-desc">
               Reemplaza términos técnicos por expresiones accesibles para
@@ -264,7 +290,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           </div>
 
           <div class="feat">
-            <div class="feat-head"><span class="idx">03</span> Vaguedades</div>
+            <div class="feat-head"><span class="idx">04</span> Vaguedades</div>
             <h3 class="feat-title">Expresiones imprecisas.</h3>
             <div class="feat-desc">
               Marca palabras que no comunican magnitud o referencia concreta e
@@ -289,7 +315,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
 
           <div class="feat">
             <div class="feat-head">
-              <span class="idx">04</span> Rodeos innecesarios
+              <span class="idx">05</span> Rodeos innecesarios
             </div>
             <h3 class="feat-title">Frases largas.</h3>
             <div class="feat-desc">
@@ -313,7 +339,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           </div>
 
           <div class="feat">
-            <div class="feat-head"><span class="idx">05</span> Voz pasiva</div>
+            <div class="feat-head"><span class="idx">06</span> Voz pasiva</div>
             <h3 class="feat-title">Pasiva hacia activa.</h3>
             <div class="feat-desc">
               Detecta construcciones pasivas y sugiere reestructurar en voz
@@ -334,7 +360,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
 
           <div class="feat">
             <div class="feat-head">
-              <span class="idx">06</span> Queísmo y dequeísmo
+              <span class="idx">07</span> Queísmo y dequeísmo
             </div>
             <h3 class="feat-title">Uso correcto de "de que".</h3>
             <div class="feat-desc">
@@ -360,7 +386,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
 
           <div class="feat">
             <div class="feat-head">
-              <span class="idx">07</span> Nominalización
+              <span class="idx">08</span> Nominalización
             </div>
             <h3 class="feat-title">Sustantivos de acción por verbos.</h3>
             <div class="feat-desc">
@@ -384,7 +410,7 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
           </div>
 
           <div class="feat">
-            <div class="feat-head"><span class="idx">08</span> Números</div>
+            <div class="feat-head"><span class="idx">09</span> Números</div>
             <h3 class="feat-title">Cifras legibles.</h3>
             <div class="feat-desc">
               Propone reemplazar números escritos con palabras por dígitos, y
@@ -403,6 +429,27 @@ const mainHtml = String.raw`<!-- =======================  HERO  ================
             <div class="feat-note">
               Omite "uno/una" en contextos ambiguos (artículo indeterminado vs.
               numeral) para evitar falsos positivos.
+            </div>
+          </div>
+
+          <div class="feat">
+            <div class="feat-head">
+              <span class="idx">10</span> Siglas sin puntos
+            </div>
+            <h3 class="feat-title">Siglas en forma actual.</h3>
+            <div class="feat-desc">
+              Detecta siglas escritas con puntos y sugiere la forma compacta,
+              que es la recomendada para este tipo de abreviaciones.
+            </div>
+            <div class="feat-ex">
+              <div class="pair">
+                <span class="from">U.N.E.S.C.O</span
+                ><span class="arrow">→</span><span class="to">UNESCO</span>
+              </div>
+              <div class="pair">
+                <span class="from">O.N.U</span><span class="arrow">→</span
+                ><span class="to">ONU</span>
+              </div>
             </div>
           </div>
         </div>
@@ -842,14 +889,14 @@ export default function IndexPage() {
   return (
     <Document
       title="Lenguaje Claro — Extensión de Chrome para escritura jurídica"
-      description="Extensión de Chrome que detecta arcaísmos, tecnicismos, nominalizaciones, voz pasiva y otros problemas de estilo en textos jurídicos dentro de Google Docs."
-      keywords="lenguaje claro, plain language, derecho, Argentina, Google Docs, extensión Chrome, escritura jurídica, redacción, arcaísmos, tecnicismos jurídicos"
+      description="Extensión de Chrome que detecta arcaísmos, títulos honoríficos, siglas con puntos, tecnicismos, nominalizaciones, voz pasiva y otros problemas de estilo en textos jurídicos dentro de Google Docs."
+      keywords="lenguaje claro, plain language, derecho, Argentina, Google Docs, extensión Chrome, escritura jurídica, redacción, arcaísmos, títulos honoríficos, siglas, tecnicismos jurídicos"
       author="Guillermo Perez"
       canonical="https://extensionlenguajeclaro.com.ar/"
       ogTitle="Lenguaje Claro — Escritura jurídica que se entiende"
-      ogDescription="Extensión de Chrome que mejora la redacción jurídica en Google Docs. Detecta arcaísmos, tecnicismos, voz pasiva y más."
+      ogDescription="Extensión de Chrome que mejora la redacción jurídica en Google Docs. Detecta arcaísmos, títulos honoríficos, siglas con puntos, voz pasiva y más."
       twitterTitle="Lenguaje Claro — Escritura jurídica que se entiende"
-      twitterDescription="Extensión de Chrome para Google Docs que detecta problemas de estilo en textos jurídicos."
+      twitterDescription="Extensión de Chrome para Google Docs que detecta arcaísmos, títulos honoríficos, siglas con puntos y otros problemas de estilo en textos jurídicos."
       structuredData={structuredData}
       afterBody={
         <>

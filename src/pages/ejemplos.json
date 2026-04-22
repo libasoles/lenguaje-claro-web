@@ -1,0 +1,5002 @@
+{
+  "version": 1,
+  "reglas": [
+    {
+      "id": "arcaismos",
+      "directorio": "arcaismos",
+      "nombre": "Arcaísmo innecesario",
+      "descripcion": "Sustituye términos obsoletos por lenguaje actual",
+      "color": "#f1c40f",
+      "ejemplos": [
+        {
+          "texto": "in fine",
+          "hallazgos": [
+            {
+              "textoDetectado": "in fine",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "al final"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"in fine\" por \"al final\""
+            }
+          ]
+        },
+        {
+          "texto": "a sensu contrario",
+          "hallazgos": [
+            {
+              "textoDetectado": "a sensu contrario",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "en sentido contrario"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a sensu contrario\" por \"en sentido contrario\""
+            }
+          ]
+        },
+        {
+          "texto": "viene en decidir",
+          "hallazgos": [
+            {
+              "textoDetectado": "viene en decidir",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "se decide"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"viene en decidir\" por \"se decide\""
+            }
+          ]
+        },
+        {
+          "texto": "otrosí digo",
+          "hallazgos": [
+            {
+              "textoDetectado": "otrosí digo",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "además solicito"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"otrosí digo\" por \"además solicito\""
+            }
+          ]
+        },
+        {
+          "texto": "susodicho",
+          "hallazgos": [
+            {
+              "textoDetectado": "susodicho",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "mencionado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"susodicho\" por \"mencionado\""
+            }
+          ]
+        },
+        {
+          "texto": "infraescrito",
+          "hallazgos": [
+            {
+              "textoDetectado": "infraescrito",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "quien firma"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"infraescrito\" por \"quien firma\""
+            }
+          ]
+        },
+        {
+          "texto": "fehaciente",
+          "hallazgos": [
+            {
+              "textoDetectado": "fehaciente",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "comprobable"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"fehaciente\" por \"comprobable\""
+            }
+          ]
+        },
+        {
+          "texto": "incoar",
+          "hallazgos": [
+            {
+              "textoDetectado": "incoar",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "iniciar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"incoar\" por \"iniciar\""
+            }
+          ]
+        },
+        {
+          "texto": "adverar",
+          "hallazgos": [
+            {
+              "textoDetectado": "adverar",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "acreditar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"adverar\" por \"acreditar\""
+            }
+          ]
+        },
+        {
+          "texto": "dirimir",
+          "hallazgos": [
+            {
+              "textoDetectado": "dirimir",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "resolver"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dirimir\" por \"resolver\""
+            }
+          ]
+        },
+        {
+          "texto": "decaer en su derecho",
+          "hallazgos": [
+            {
+              "textoDetectado": "decaer en su derecho",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "perder su derecho"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"decaer en su derecho\" por \"perder su derecho\""
+            }
+          ]
+        },
+        {
+          "texto": "sírvase proveer",
+          "hallazgos": [
+            {
+              "textoDetectado": "sírvase proveer",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "disponga"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"sírvase proveer\" por \"disponga\""
+            }
+          ]
+        },
+        {
+          "texto": "tenor literal",
+          "hallazgos": [
+            {
+              "textoDetectado": "tenor literal",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "texto literal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"tenor literal\" por \"texto literal\""
+            }
+          ]
+        },
+        {
+          "texto": "tengo el agrado de dirigirme",
+          "hallazgos": [
+            {
+              "textoDetectado": "tengo el agrado de dirigirme",
+              "inicio": 0,
+              "fin": 28,
+              "sugerencias": [
+                "le escribo para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"tengo el agrado de dirigirme\" por \"le escribo para\""
+            }
+          ]
+        },
+        {
+          "texto": "obra en mi poder",
+          "hallazgos": [
+            {
+              "textoDetectado": "obra en mi poder",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "tengo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"obra en mi poder\" por \"tengo\""
+            }
+          ]
+        },
+        {
+          "texto": "elevar una consulta",
+          "hallazgos": [
+            {
+              "textoDetectado": "elevar una consulta",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "consultar",
+                "preguntar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"elevar una consulta\" por \"consultar\""
+            }
+          ]
+        },
+        {
+          "texto": "in situ",
+          "hallazgos": [
+            {
+              "textoDetectado": "in situ",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "en el lugar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"in situ\" por \"en el lugar\""
+            }
+          ]
+        },
+        {
+          "texto": "in-situ",
+          "hallazgos": [
+            {
+              "textoDetectado": "in-situ",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "en el lugar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"in-situ\" por \"en el lugar\""
+            }
+          ]
+        },
+        {
+          "texto": "fágase",
+          "hallazgos": [
+            {
+              "textoDetectado": "fágase",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "hágase",
+                "se aprueba"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"fágase\" por \"hágase\""
+            }
+          ]
+        },
+        {
+          "texto": "habida cuenta que",
+          "hallazgos": [
+            {
+              "textoDetectado": "habida cuenta que",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "porque",
+                "ya que",
+                "dado que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"habida cuenta que\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "habida cuenta de que",
+          "hallazgos": [
+            {
+              "textoDetectado": "habida cuenta de que",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "porque",
+                "ya que",
+                "dado que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"habida cuenta de que\" por \"porque\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "titulos-honorificos",
+      "directorio": "titulos-honorificos",
+      "nombre": "Títulos honoríficos",
+      "descripcion": "Detecta tratamientos honoríficos o cuasi-nobiliarios y sugiere una forma directa",
+      "color": "#c0392b",
+      "ejemplos": [
+        {
+          "texto": "honorable tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "honorable tribunal",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"honorable tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "honorable cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "honorable cámara",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"honorable cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "honorable corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "honorable corte",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"honorable corte\" por \"corte\""
+            }
+          ]
+        },
+        {
+          "texto": "honorable juzgado",
+          "hallazgos": [
+            {
+              "textoDetectado": "honorable juzgado",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "juzgado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"honorable juzgado\" por \"juzgado\""
+            }
+          ]
+        },
+        {
+          "texto": "h. tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "h. tribunal",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"h. tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "h. cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "h. cámara",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"h. cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "h. corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "h. corte",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"h. corte\" por \"corte\""
+            }
+          ]
+        },
+        {
+          "texto": "h. juzgado",
+          "hallazgos": [
+            {
+              "textoDetectado": "h. juzgado",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "juzgado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"h. juzgado\" por \"juzgado\""
+            }
+          ]
+        },
+        {
+          "texto": "excma. cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "excma. cámara",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"excma. cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "excmo. tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "excmo. tribunal",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"excmo. tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "excelentísima corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "excelentísima corte",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"excelentísima corte\" por \"corte\""
+            }
+          ]
+        },
+        {
+          "texto": "excelentísimo tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "excelentísimo tribunal",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"excelentísimo tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "ilustrísima cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "ilustrísima cámara",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"ilustrísima cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "ilustrísimo tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "ilustrísimo tribunal",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"ilustrísimo tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "ilustre tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "ilustre tribunal",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"ilustre tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "señor juez",
+          "hallazgos": [
+            {
+              "textoDetectado": "señor juez",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "juez"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"señor juez\" por \"juez\""
+            }
+          ]
+        },
+        {
+          "texto": "señora jueza",
+          "hallazgos": [
+            {
+              "textoDetectado": "señora jueza",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "jueza"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"señora jueza\" por \"jueza\""
+            }
+          ]
+        },
+        {
+          "texto": "señores jueces",
+          "hallazgos": [
+            {
+              "textoDetectado": "señores jueces",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "jueces"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"señores jueces\" por \"jueces\""
+            }
+          ]
+        },
+        {
+          "texto": "señoras juezas",
+          "hallazgos": [
+            {
+              "textoDetectado": "señoras juezas",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "juezas"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"señoras juezas\" por \"juezas\""
+            }
+          ]
+        },
+        {
+          "texto": "distinguido magistrado",
+          "hallazgos": [
+            {
+              "textoDetectado": "distinguido magistrado",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "magistrado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"distinguido magistrado\" por \"magistrado\""
+            }
+          ]
+        },
+        {
+          "texto": "distinguida magistrada",
+          "hallazgos": [
+            {
+              "textoDetectado": "distinguida magistrada",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "magistrada"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"distinguida magistrada\" por \"magistrada\""
+            }
+          ]
+        },
+        {
+          "texto": "distinguido tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "distinguido tribunal",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"distinguido tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "distinguida cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "distinguida cámara",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"distinguida cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "excma.",
+          "patron": "excma./excmo.",
+          "hallazgos": [
+            {
+              "textoDetectado": "excma.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"excma.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "excelentísima",
+          "patron": "excelentísima/excelentísimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "excelentísima",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"excelentísima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "ilma.",
+          "patron": "ilma./ilmo.",
+          "hallazgos": [
+            {
+              "textoDetectado": "ilma.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"ilma.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "ilustrísima",
+          "patron": "ilustrísima/ilustrísimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "ilustrísima",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"ilustrísima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "honorable",
+          "hallazgos": [
+            {
+              "textoDetectado": "honorable",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "Evitá usar \"honorable\" como tratamiento institucional. Si hace falta, nombrá el órgano directamente."
+              ],
+              "aplicable": false,
+              "descripcion": "\"honorable\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "distinguido",
+          "hallazgos": [
+            {
+              "textoDetectado": "distinguido",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá adjetivos honoríficos como \"distinguido\" o \"distinguida\". Omitilos o usá una identificación neutral."
+              ],
+              "aplicable": false,
+              "descripcion": "\"distinguido\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "su señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "su señoría",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Evitá fórmulas como \"Su Señoría\". Si hace falta, usá \"el juzgado\", \"el tribunal\" o el cargo concreto."
+              ],
+              "aplicable": false,
+              "descripcion": "\"su señoría\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "vuestra señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "vuestra señoría",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "usted",
+                "el juzgado",
+                "el tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"vuestra señoría\" por \"usted\""
+            }
+          ]
+        },
+        {
+          "texto": "señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "señoría",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "Evitá \"señoría\" como tratamiento honorífico. Usá el cargo, el órgano o el nombre de la persona."
+              ],
+              "aplicable": false,
+              "descripcion": "\"señoría\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "v.s.",
+          "hallazgos": [
+            {
+              "textoDetectado": "v.s.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.S.\" o \"V.S.I.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"v.s.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "s.s.",
+          "hallazgos": [
+            {
+              "textoDetectado": "s.s.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"S.S.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"s.s.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "v.e.",
+          "hallazgos": [
+            {
+              "textoDetectado": "v.e.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.E.\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"v.e.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "su excelencia",
+          "hallazgos": [
+            {
+              "textoDetectado": "su excelencia",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá fórmulas como \"Su Excelencia\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"su excelencia\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "vuestra excelencia",
+          "hallazgos": [
+            {
+              "textoDetectado": "vuestra excelencia",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "Evitá fórmulas como \"Vuestra Excelencia\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"vuestra excelencia\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "digno tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "digno tribunal",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"digno tribunal\" por \"tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "digna cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "digna cámara",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"digna cámara\" por \"cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "digno magistrado",
+          "hallazgos": [
+            {
+              "textoDetectado": "digno magistrado",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "magistrado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"digno magistrado\" por \"magistrado\""
+            }
+          ]
+        },
+        {
+          "texto": "digna magistrada",
+          "hallazgos": [
+            {
+              "textoDetectado": "digna magistrada",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "magistrada"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"digna magistrada\" por \"magistrada\""
+            }
+          ]
+        },
+        {
+          "texto": "Honorable Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Honorable Tribunal",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Honorable Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Honorable Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "Honorable Cámara",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Honorable Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "Honorable Corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "Honorable Corte",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "Corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Honorable Corte\" por \"Corte\""
+            }
+          ]
+        },
+        {
+          "texto": "Honorable Juzgado",
+          "hallazgos": [
+            {
+              "textoDetectado": "Honorable Juzgado",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "Juzgado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Honorable Juzgado\" por \"Juzgado\""
+            }
+          ]
+        },
+        {
+          "texto": "H. Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "H. Tribunal",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"H. Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "H. Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "H. Cámara",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"H. Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "H. Corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "H. Corte",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"H. Corte\" por \"Corte\""
+            }
+          ]
+        },
+        {
+          "texto": "H. Juzgado",
+          "hallazgos": [
+            {
+              "textoDetectado": "H. Juzgado",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Juzgado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"H. Juzgado\" por \"Juzgado\""
+            }
+          ]
+        },
+        {
+          "texto": "Excma. Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excma. Cámara",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Excma. Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "Excmo. Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmo. Tribunal",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Excmo. Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísima Corte",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísima Corte",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "Corte"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Excelentísima Corte\" por \"Corte\""
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísimo Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísimo Tribunal",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Excelentísimo Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísima Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísima Cámara",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Ilustrísima Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísimo Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísimo Tribunal",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Ilustrísimo Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Ilustre Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustre Tribunal",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Ilustre Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Señor Juez",
+          "hallazgos": [
+            {
+              "textoDetectado": "Señor Juez",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Juez"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Señor Juez\" por \"Juez\""
+            }
+          ]
+        },
+        {
+          "texto": "Señora Jueza",
+          "hallazgos": [
+            {
+              "textoDetectado": "Señora Jueza",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Jueza"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Señora Jueza\" por \"Jueza\""
+            }
+          ]
+        },
+        {
+          "texto": "Señores Jueces",
+          "hallazgos": [
+            {
+              "textoDetectado": "Señores Jueces",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Jueces"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Señores Jueces\" por \"Jueces\""
+            }
+          ]
+        },
+        {
+          "texto": "Señoras Juezas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Señoras Juezas",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Juezas"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Señoras Juezas\" por \"Juezas\""
+            }
+          ]
+        },
+        {
+          "texto": "Distinguido Magistrado",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguido Magistrado",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "Magistrado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Distinguido Magistrado\" por \"Magistrado\""
+            }
+          ]
+        },
+        {
+          "texto": "Distinguida Magistrada",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguida Magistrada",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "Magistrada"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Distinguida Magistrada\" por \"Magistrada\""
+            }
+          ]
+        },
+        {
+          "texto": "Distinguido Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguido Tribunal",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Distinguido Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Distinguida Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguida Cámara",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Distinguida Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "Digno Tribunal",
+          "hallazgos": [
+            {
+              "textoDetectado": "Digno Tribunal",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Digno Tribunal\" por \"Tribunal\""
+            }
+          ]
+        },
+        {
+          "texto": "Digna Cámara",
+          "hallazgos": [
+            {
+              "textoDetectado": "Digna Cámara",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Cámara"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Digna Cámara\" por \"Cámara\""
+            }
+          ]
+        },
+        {
+          "texto": "Digno Magistrado",
+          "hallazgos": [
+            {
+              "textoDetectado": "Digno Magistrado",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "Magistrado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Digno Magistrado\" por \"Magistrado\""
+            }
+          ]
+        },
+        {
+          "texto": "Digna Magistrada",
+          "hallazgos": [
+            {
+              "textoDetectado": "Digna Magistrada",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "Magistrada"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Digna Magistrada\" por \"Magistrada\""
+            }
+          ]
+        },
+        {
+          "texto": "Excma.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excma.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excma.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excma",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excma",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excma\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmo.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmo.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmo.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmo",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmas.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmas.",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmas.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmas",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmos.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmos.",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmos.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excmos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excmos",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá tratamientos honoríficos como \"Excma.\" o \"Excmo.\". Usá el nombre del órgano o cargo sin ese tratamiento."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excmos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísima",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísima",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentísima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentisima",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentisima",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentisima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísimo",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentísimo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentisimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentisimo",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentisimo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísimas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísimas",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentísimas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentisimas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentisimas",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentisimas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentísimos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentísimos",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentísimos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Excelentisimos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Excelentisimos",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "Evitá tratamientos cuasi-nobiliarios como \"excelentísima\" o \"excelentísimo\". Usá el cargo o institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Excelentisimos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilma.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilma.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilma.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilma",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilma",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilma\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmo.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmo.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmo.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmo",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmas.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmas.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmas.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmas",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmos.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmos.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmos.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilmos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilmos",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas honoríficas como \"Ilma.\" o \"Ilmo.\". Usá el cargo o institución sin tratamiento ceremonial."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilmos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísima",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísima",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrísima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrisima",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrisima",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrisima\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísimo",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrísimo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrisimo",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrisimo",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrisimo\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísimas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísimas",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrísimas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrisimas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrisimas",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrisimas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrísimos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrísimos",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrísimos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Ilustrisimos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Ilustrisimos",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá tratamientos como \"ilustrísima\" o \"ilustrísimo\". Nombrá directamente el cargo o el órgano."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Ilustrisimos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Honorable",
+          "hallazgos": [
+            {
+              "textoDetectado": "Honorable",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "Evitá usar \"honorable\" como tratamiento institucional. Si hace falta, nombrá el órgano directamente."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Honorable\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Distinguido",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguido",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá adjetivos honoríficos como \"distinguido\" o \"distinguida\". Omitilos o usá una identificación neutral."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Distinguido\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Distinguida",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguida",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Evitá adjetivos honoríficos como \"distinguido\" o \"distinguida\". Omitilos o usá una identificación neutral."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Distinguida\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Distinguidos",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguidos",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá adjetivos honoríficos como \"distinguido\" o \"distinguida\". Omitilos o usá una identificación neutral."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Distinguidos\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Distinguidas",
+          "hallazgos": [
+            {
+              "textoDetectado": "Distinguidas",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Evitá adjetivos honoríficos como \"distinguido\" o \"distinguida\". Omitilos o usá una identificación neutral."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Distinguidas\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Su Señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "Su Señoría",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Evitá fórmulas como \"Su Señoría\". Si hace falta, usá \"el juzgado\", \"el tribunal\" o el cargo concreto."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Su Señoría\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Vuestra Señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vuestra Señoría",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vuestra Señoría\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vra. Sría.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vra. Sría.",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vra. Sría.\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vra Sría",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vra Sría",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vra Sría\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vra. Sa.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vra. Sa.",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vra. Sa.\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vra Sa",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vra Sa",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vra Sa\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vuestra Sa.",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vuestra Sa.",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vuestra Sa.\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Vuestra Sa",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vuestra Sa",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Usted",
+                "El Juzgado",
+                "El Tribunal"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"Vuestra Sa\" por \"Usted\""
+            }
+          ]
+        },
+        {
+          "texto": "Señoría",
+          "hallazgos": [
+            {
+              "textoDetectado": "Señoría",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "Evitá \"señoría\" como tratamiento honorífico. Usá el cargo, el órgano o el nombre de la persona."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Señoría\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V.S.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V.S.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.S.\" o \"V.S.I.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V.S.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V. S.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V. S.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.S.\" o \"V.S.I.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V. S.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V.S.I.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V.S.I.",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.S.\" o \"V.S.I.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V.S.I.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V. S. I.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V. S. I.",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.S.\" o \"V.S.I.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V. S. I.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "S.S.",
+          "hallazgos": [
+            {
+              "textoDetectado": "S.S.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"S.S.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"S.S.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "S. S.",
+          "hallazgos": [
+            {
+              "textoDetectado": "S. S.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"S.S.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"S. S.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "S.S",
+          "hallazgos": [
+            {
+              "textoDetectado": "S.S",
+              "inicio": 0,
+              "fin": 3,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"S.S.\". Usá el cargo o el órgano de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"S.S\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V.E.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V.E.",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.E.\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V.E.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "V. E.",
+          "hallazgos": [
+            {
+              "textoDetectado": "V. E.",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Evitá abreviaturas de tratamiento como \"V.E.\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"V. E.\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Su Excelencia",
+          "hallazgos": [
+            {
+              "textoDetectado": "Su Excelencia",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Evitá fórmulas como \"Su Excelencia\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Su Excelencia\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        },
+        {
+          "texto": "Vuestra Excelencia",
+          "hallazgos": [
+            {
+              "textoDetectado": "Vuestra Excelencia",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "Evitá fórmulas como \"Vuestra Excelencia\". Usá el cargo o la institución de forma directa."
+              ],
+              "aplicable": false,
+              "descripcion": "\"Vuestra Excelencia\" usa un tratamiento honorífico o cuasi-nobiliario"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tecnicismos",
+      "directorio": "tecnicismos",
+      "nombre": "Tecnicismo",
+      "descripcion": "Reemplaza términos técnicos por lenguaje llano",
+      "color": "#e67e22",
+      "ejemplos": [
+        {
+          "texto": "prestatario",
+          "hallazgos": [
+            {
+              "textoDetectado": "prestatario",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "persona que recibe un préstamo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"prestatario\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "expiración",
+          "hallazgos": [
+            {
+              "textoDetectado": "expiración",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "vencimiento"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"expiración\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "mora",
+          "hallazgos": [
+            {
+              "textoDetectado": "mora",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "retraso",
+                "aplazamiento"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"mora\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "enajenar",
+          "hallazgos": [
+            {
+              "textoDetectado": "enajenar",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "vender",
+                "transmitir"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"enajenar\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "enajenación",
+          "hallazgos": [
+            {
+              "textoDetectado": "enajenación",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "venta",
+                "transmisión"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"enajenación\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "empero",
+          "hallazgos": [
+            {
+              "textoDetectado": "empero",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "sin embargo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"empero\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "dilación",
+          "hallazgos": [
+            {
+              "textoDetectado": "dilación",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "demora"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dilación\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "per cápita",
+          "hallazgos": [
+            {
+              "textoDetectado": "per cápita",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "por persona"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"per cápita\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "cláusula penal",
+          "hallazgos": [
+            {
+              "textoDetectado": "cláusula penal",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "penalidad por incumplimiento"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"cláusula penal\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "acreedor",
+          "hallazgos": [
+            {
+              "textoDetectado": "acreedor",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "quien presta el dinero",
+                "quien tiene el derecho a cobrar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"acreedor\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "deudor",
+          "hallazgos": [
+            {
+              "textoDetectado": "deudor",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "quien debe el dinero",
+                "quien tiene la obligación de pagar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"deudor\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "rescisión",
+          "hallazgos": [
+            {
+              "textoDetectado": "rescisión",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "cancelación",
+                "terminación"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"rescisión\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "resolución",
+          "hallazgos": [
+            {
+              "textoDetectado": "resolución",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "cancelación",
+                "terminación"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"resolución\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "suscribir",
+          "hallazgos": [
+            {
+              "textoDetectado": "suscribir",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "firmar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"suscribir\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "suscripto",
+          "hallazgos": [
+            {
+              "textoDetectado": "suscripto",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "firmado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"suscripto\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "fojas",
+          "hallazgos": [
+            {
+              "textoDetectado": "fojas",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "páginas",
+                "hojas"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"fojas\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "notificar",
+          "hallazgos": [
+            {
+              "textoDetectado": "notificar",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "avisar",
+                "comunicar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"notificar\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "arbitrar los medios",
+          "hallazgos": [
+            {
+              "textoDetectado": "arbitrar los medios",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "hacer lo necesario",
+                "gestionar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"arbitrar los medios\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "erogación",
+          "hallazgos": [
+            {
+              "textoDetectado": "erogación",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "gasto",
+                "pago"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"erogación\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "fehacientemente",
+          "hallazgos": [
+            {
+              "textoDetectado": "fehacientemente",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "de forma comprobable",
+                "formalmente"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"fehacientemente\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "autógrafa",
+          "hallazgos": [
+            {
+              "textoDetectado": "autógrafa",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "firma de puño y letra"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"autógrafa\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "estipulaciones",
+          "hallazgos": [
+            {
+              "textoDetectado": "estipulaciones",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "condiciones",
+                "términos"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"estipulaciones\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "estipulación",
+          "hallazgos": [
+            {
+              "textoDetectado": "estipulación",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "condición",
+                "término"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"estipulación\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "estipular",
+          "hallazgos": [
+            {
+              "textoDetectado": "estipular",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "acordar",
+                "establecer"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"estipular\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "actor",
+          "hallazgos": [
+            {
+              "textoDetectado": "actor",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "quien demanda",
+                "la parte demandante"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"actor\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "actora",
+          "hallazgos": [
+            {
+              "textoDetectado": "actora",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "quien demanda",
+                "la parte demandante"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"actora\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "accionante",
+          "hallazgos": [
+            {
+              "textoDetectado": "accionante",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "quien inició el juicio",
+                "quien demanda"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"accionante\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "juzgador",
+          "hallazgos": [
+            {
+              "textoDetectado": "juzgador",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "el juez",
+                "quien juzga"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"juzgador\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "in limine",
+          "hallazgos": [
+            {
+              "textoDetectado": "in limine",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "sin más trámite",
+                "de entrada"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"in limine\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "adujo",
+          "hallazgos": [
+            {
+              "textoDetectado": "adujo",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "dijo",
+                "mencionó",
+                "argumentó"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"adujo\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "avizora",
+          "hallazgos": [
+            {
+              "textoDetectado": "avizora",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "ve",
+                "percibe",
+                "prevé"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"avizora\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "comparecer",
+          "hallazgos": [
+            {
+              "textoDetectado": "comparecer",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "presentarse",
+                "asistir"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"comparecer\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "copia fiel",
+          "hallazgos": [
+            {
+              "textoDetectado": "copia fiel",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "copia idéntica",
+                "copia exacta"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"copia fiel\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "desglose",
+          "hallazgos": [
+            {
+              "textoDetectado": "desglose",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "separación de documentos",
+                "sacar hojas del expediente"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"desglose\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "desinsacular",
+          "hallazgos": [
+            {
+              "textoDetectado": "desinsacular",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "sortear",
+                "sacar de la urna"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"desinsacular\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "emplazado",
+          "hallazgos": [
+            {
+              "textoDetectado": "emplazado",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "notificado",
+                "citado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"emplazado\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "encartado",
+          "hallazgos": [
+            {
+              "textoDetectado": "encartado",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "acusado",
+                "imputado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"encartado\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "endilgado",
+          "hallazgos": [
+            {
+              "textoDetectado": "endilgado",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "atribuido",
+                "acusado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"endilgado\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "estado de autos",
+          "hallazgos": [
+            {
+              "textoDetectado": "estado de autos",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "estado del expediente",
+                "situación del caso"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"estado de autos\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "fallo",
+          "hallazgos": [
+            {
+              "textoDetectado": "fallo",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "sentencia",
+                "decisión del juez"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"fallo\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "firme",
+          "hallazgos": [
+            {
+              "textoDetectado": "firme",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "definitivo",
+                "que ya no se puede apelar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"firme\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "firmeza",
+          "hallazgos": [
+            {
+              "textoDetectado": "firmeza",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "carácter definitivo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"firmeza\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "foja",
+          "hallazgos": [
+            {
+              "textoDetectado": "foja",
+              "inicio": 0,
+              "fin": 4,
+              "sugerencias": [
+                "hoja",
+                "página"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"foja\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "foliatura",
+          "hallazgos": [
+            {
+              "textoDetectado": "foliatura",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "numeración de las páginas"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"foliatura\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "génesis",
+          "hallazgos": [
+            {
+              "textoDetectado": "génesis",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "origen",
+                "inicio",
+                "comienzo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"génesis\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "palmaria",
+          "hallazgos": [
+            {
+              "textoDetectado": "palmaria",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "clara",
+                "evidente",
+                "obvia"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"palmaria\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "pesquisa",
+          "hallazgos": [
+            {
+              "textoDetectado": "pesquisa",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "investigación",
+                "averiguación"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"pesquisa\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "precitado",
+          "hallazgos": [
+            {
+              "textoDetectado": "precitado",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "ya mencionado",
+                "antes citado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"precitado\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "prístino",
+          "hallazgos": [
+            {
+              "textoDetectado": "prístino",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "puro",
+                "original",
+                "claro"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"prístino\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "proveído",
+          "hallazgos": [
+            {
+              "textoDetectado": "proveído",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "resolución",
+                "decisión",
+                "orden del juez"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"proveído\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "recabar",
+          "hallazgos": [
+            {
+              "textoDetectado": "recabar",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "reunir",
+                "juntar",
+                "obtener"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"recabar\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "resulta",
+          "hallazgos": [
+            {
+              "textoDetectado": "resulta",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "surge",
+                "se desprende",
+                "aparece"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"resulta\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "subrogar",
+          "hallazgos": [
+            {
+              "textoDetectado": "subrogar",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "reemplazar",
+                "sustituir a alguien en sus derechos"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"subrogar\" por lenguaje más claro"
+            }
+          ]
+        },
+        {
+          "texto": "zanjado",
+          "hallazgos": [
+            {
+              "textoDetectado": "zanjado",
+              "inicio": 0,
+              "fin": 7,
+              "sugerencias": [
+                "resuelto",
+                "solucionado",
+                "terminado"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"zanjado\" por lenguaje más claro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vaguedades",
+      "directorio": "vaguedades",
+      "nombre": "Vaguedad",
+      "descripcion": "Reemplaza expresiones vagas por información precisa y verificable",
+      "color": "#8e44ad",
+      "ejemplos": [
+        {
+          "texto": "mucho",
+          "hallazgos": [
+            {
+              "textoDetectado": "mucho",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Cifra o porcentaje (ej: 90%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"mucho\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "mucha",
+          "hallazgos": [
+            {
+              "textoDetectado": "mucha",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "Cifra o porcentaje (ej: 90%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"mucha\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "muchos",
+          "hallazgos": [
+            {
+              "textoDetectado": "muchos",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Cifra o porcentaje (ej: 90%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"muchos\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "muchas",
+          "hallazgos": [
+            {
+              "textoDetectado": "muchas",
+              "inicio": 0,
+              "fin": 6,
+              "sugerencias": [
+                "Cifra o porcentaje (ej: 90%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"muchas\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "maravilloso",
+          "hallazgos": [
+            {
+              "textoDetectado": "maravilloso",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Cifra o porcentaje de satisfacción (ej: 85%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"maravilloso\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "maravillosa",
+          "hallazgos": [
+            {
+              "textoDetectado": "maravillosa",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Cifra o porcentaje de satisfacción (ej: 85%)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"maravillosa\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "en alguna medida",
+          "hallazgos": [
+            {
+              "textoDetectado": "en alguna medida",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "Cifra de proporción numérica (ej: uno de cada tres)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"en alguna medida\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "razonable",
+          "hallazgos": [
+            {
+              "textoDetectado": "razonable",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"razonable\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "suficiente",
+          "hallazgos": [
+            {
+              "textoDetectado": "suficiente",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"suficiente\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "suficientes",
+          "hallazgos": [
+            {
+              "textoDetectado": "suficientes",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"suficientes\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "considerable",
+          "hallazgos": [
+            {
+              "textoDetectado": "considerable",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"considerable\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "considerables",
+          "hallazgos": [
+            {
+              "textoDetectado": "considerables",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"considerables\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "oportuno",
+          "hallazgos": [
+            {
+              "textoDetectado": "oportuno",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"oportuno\" es una expresión vaga"
+            }
+          ]
+        },
+        {
+          "texto": "oportuna",
+          "hallazgos": [
+            {
+              "textoDetectado": "oportuna",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "Cifra que sustente la afirmación (ej: un computador por cada tres estudiantes)"
+              ],
+              "aplicable": false,
+              "descripcion": "\"oportuna\" es una expresión vaga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rodeos",
+      "directorio": "rodeos",
+      "nombre": "Rodeo innecesario",
+      "descripcion": "Sustituye frases extensas por alternativas concisas",
+      "color": "#8e44ad",
+      "ejemplos": [
+        {
+          "texto": "en el momento actual",
+          "hallazgos": [
+            {
+              "textoDetectado": "en el momento actual",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "ahora"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en el momento actual\" por \"ahora\""
+            }
+          ]
+        },
+        {
+          "texto": "en vista de que",
+          "hallazgos": [
+            {
+              "textoDetectado": "en vista de que",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "por"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en vista de que\" por \"por\""
+            }
+          ]
+        },
+        {
+          "texto": "dado el hecho de que",
+          "hallazgos": [
+            {
+              "textoDetectado": "dado el hecho de que",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "porque"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dado el hecho de que\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "con motivo de",
+          "hallazgos": [
+            {
+              "textoDetectado": "con motivo de",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "porque"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"con motivo de\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "como efecto de",
+          "hallazgos": [
+            {
+              "textoDetectado": "como efecto de",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "porque"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"como efecto de\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "a fin de",
+          "hallazgos": [
+            {
+              "textoDetectado": "a fin de",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a fin de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "con el objeto de",
+          "hallazgos": [
+            {
+              "textoDetectado": "con el objeto de",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"con el objeto de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "para el propósito de",
+          "hallazgos": [
+            {
+              "textoDetectado": "para el propósito de",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"para el propósito de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "con la finalidad de",
+          "hallazgos": [
+            {
+              "textoDetectado": "con la finalidad de",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"con la finalidad de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "en el entendido de",
+          "hallazgos": [
+            {
+              "textoDetectado": "en el entendido de",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "porque",
+                "ya que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en el entendido de\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "toda vez que",
+          "hallazgos": [
+            {
+              "textoDetectado": "toda vez que",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "porque",
+                "ya que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"toda vez que\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "debido a que",
+          "hallazgos": [
+            {
+              "textoDetectado": "debido a que",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "porque"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"debido a que\" por \"porque\""
+            }
+          ]
+        },
+        {
+          "texto": "no obstante el hecho de que",
+          "hallazgos": [
+            {
+              "textoDetectado": "no obstante el hecho de que",
+              "inicio": 0,
+              "fin": 27,
+              "sugerencias": [
+                "aunque",
+                "a pesar de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"no obstante el hecho de que\" por \"aunque\""
+            }
+          ]
+        },
+        {
+          "texto": "de conformidad con",
+          "hallazgos": [
+            {
+              "textoDetectado": "de conformidad con",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "según",
+                "bajo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"de conformidad con\" por \"según\""
+            }
+          ]
+        },
+        {
+          "texto": "a considerable distancia",
+          "hallazgos": [
+            {
+              "textoDetectado": "a considerable distancia",
+              "inicio": 0,
+              "fin": 24,
+              "sugerencias": [
+                "lejos"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a considerable distancia\" por \"lejos\""
+            }
+          ]
+        },
+        {
+          "texto": "en virtud de lo expuesto",
+          "hallazgos": [
+            {
+              "textoDetectado": "en virtud de lo expuesto",
+              "inicio": 0,
+              "fin": 24,
+              "sugerencias": [
+                "por lo expuesto",
+                "por eso"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en virtud de lo expuesto\" por \"por lo expuesto\""
+            }
+          ]
+        },
+        {
+          "texto": "en virtud de lo anteriormente expuesto",
+          "hallazgos": [
+            {
+              "textoDetectado": "en virtud de lo anteriormente expuesto",
+              "inicio": 0,
+              "fin": 38,
+              "sugerencias": [
+                "por lo expuesto",
+                "por eso"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en virtud de lo anteriormente expuesto\" por \"por lo expuesto\""
+            }
+          ]
+        },
+        {
+          "texto": "vengo por el presente a",
+          "hallazgos": [
+            {
+              "textoDetectado": "vengo por el presente a",
+              "inicio": 0,
+              "fin": 23,
+              "sugerencias": [
+                "por este escrito"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"vengo por el presente a\" por \"por este escrito\""
+            },
+            {
+              "textoDetectado": "por el presente",
+              "inicio": 6,
+              "fin": 21,
+              "sugerencias": [
+                "por este escrito"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"por el presente\" por \"por este escrito\""
+            }
+          ]
+        },
+        {
+          "texto": "por el presente",
+          "hallazgos": [
+            {
+              "textoDetectado": "por el presente",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "por este escrito"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"por el presente\" por \"por este escrito\""
+            }
+          ]
+        },
+        {
+          "texto": "de fecha",
+          "hallazgos": [
+            {
+              "textoDetectado": "de fecha",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "del",
+                "fechado el"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"de fecha\" por \"del\""
+            }
+          ]
+        },
+        {
+          "texto": "con posterioridad",
+          "hallazgos": [
+            {
+              "textoDetectado": "con posterioridad",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "después",
+                "luego"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"con posterioridad\" por \"después\""
+            }
+          ]
+        },
+        {
+          "texto": "con anterioridad",
+          "hallazgos": [
+            {
+              "textoDetectado": "con anterioridad",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "antes"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"con anterioridad\" por \"antes\""
+            }
+          ]
+        },
+        {
+          "texto": "motivo por el cual",
+          "hallazgos": [
+            {
+              "textoDetectado": "motivo por el cual",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "por eso",
+                "por lo que"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"motivo por el cual\" por \"por eso\""
+            }
+          ]
+        },
+        {
+          "texto": "en el día de la fecha",
+          "hallazgos": [
+            {
+              "textoDetectado": "en el día de la fecha",
+              "inicio": 0,
+              "fin": 21,
+              "sugerencias": [
+                "hoy"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en el día de la fecha\" por \"hoy\""
+            }
+          ]
+        },
+        {
+          "texto": "a la brevedad posible",
+          "hallazgos": [
+            {
+              "textoDetectado": "a la brevedad posible",
+              "inicio": 0,
+              "fin": 21,
+              "sugerencias": [
+                "pronto",
+                "cuanto antes"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a la brevedad posible\" por \"pronto\""
+            }
+          ]
+        },
+        {
+          "texto": "en el marco de",
+          "hallazgos": [
+            {
+              "textoDetectado": "en el marco de",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "en",
+                "dentro de"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en el marco de\" por \"en\""
+            }
+          ]
+        },
+        {
+          "texto": "a los efectos de",
+          "hallazgos": [
+            {
+              "textoDetectado": "a los efectos de",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a los efectos de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "a efectos de",
+          "hallazgos": [
+            {
+              "textoDetectado": "a efectos de",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "para"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a efectos de\" por \"para\""
+            }
+          ]
+        },
+        {
+          "texto": "en razón de",
+          "hallazgos": [
+            {
+              "textoDetectado": "en razón de",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "por",
+                "debido a"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en razón de\" por \"por\""
+            }
+          ]
+        },
+        {
+          "texto": "en lo que respecta a",
+          "hallazgos": [
+            {
+              "textoDetectado": "en lo que respecta a",
+              "inicio": 0,
+              "fin": 20,
+              "sugerencias": [
+                "sobre",
+                "en cuanto a"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en lo que respecta a\" por \"sobre\""
+            }
+          ]
+        },
+        {
+          "texto": "a partir de este momento",
+          "hallazgos": [
+            {
+              "textoDetectado": "a partir de este momento",
+              "inicio": 0,
+              "fin": 24,
+              "sugerencias": [
+                "desde ahora"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a partir de este momento\" por \"desde ahora\""
+            }
+          ]
+        },
+        {
+          "texto": "sin que se tuviera en consideración",
+          "hallazgos": [
+            {
+              "textoDetectado": "sin que se tuviera en consideración",
+              "inicio": 0,
+              "fin": 35,
+              "sugerencias": [
+                "sin considerar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"sin que se tuviera en consideración\" por \"sin considerar\""
+            }
+          ]
+        },
+        {
+          "texto": "sin tener en consideración",
+          "hallazgos": [
+            {
+              "textoDetectado": "sin tener en consideración",
+              "inicio": 0,
+              "fin": 26,
+              "sugerencias": [
+                "sin considerar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"sin tener en consideración\" por \"sin considerar\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voz-pasiva",
+      "directorio": "voz-pasiva",
+      "nombre": "Voz pasiva",
+      "descripcion": "Reemplaza construcciones pasivas por voz activa más directa",
+      "color": "#f1c40f",
+      "ejemplos": [
+        {
+          "texto": "La medida fue aprobada por el Senado",
+          "hallazgos": [
+            {
+              "textoDetectado": "La medida fue aprobada por el Senado",
+              "inicio": 0,
+              "fin": 36,
+              "sugerencias": [
+                "El Senado aprobó la medida"
+              ],
+              "aplicable": true,
+              "descripcion": "Voz pasiva detectada. Propuesta en voz activa: \"El Senado aprobó la medida\"."
+            }
+          ]
+        },
+        {
+          "texto": "Fue interpuesto el recurso por la actora",
+          "hallazgos": [
+            {
+              "textoDetectado": "Fue interpuesto el recurso por la actora",
+              "inicio": 0,
+              "fin": 40,
+              "sugerencias": [
+                "La actora interpuso el recurso"
+              ],
+              "aplicable": true,
+              "descripcion": "Voz pasiva detectada. Propuesta en voz activa: \"La actora interpuso el recurso\"."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queismo",
+      "directorio": "queismo",
+      "nombre": "Queismo y dequeismo",
+      "descripcion": "Detecta posible queismo y posible dequeismo con patrones curados y contexto local",
+      "color": "#f1c40f",
+      "ejemplos": [
+        {
+          "texto": "darse cuenta que",
+          "patron": "darse-cuenta",
+          "hallazgos": [
+            {
+              "textoDetectado": "darse cuenta que",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "darse cuenta de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en darse cuenta. Confianza alta.",
+              "tipoHallazgo": "queismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "darse cuenta que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "alegrarse que",
+          "patron": "alegrarse",
+          "hallazgos": [
+            {
+              "textoDetectado": "alegrarse que",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "alegrarse de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en alegrarse. Confianza media.",
+              "tipoHallazgo": "queismo",
+              "severidad": "media",
+              "confianza": "media",
+              "ventanaLocal": "alegrarse que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "asegurarse que",
+          "patron": "asegurarse",
+          "hallazgos": [
+            {
+              "textoDetectado": "asegurarse que",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "asegurarse de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en asegurarse. Confianza alta.",
+              "tipoHallazgo": "queismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "asegurarse que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "convencerse que",
+          "patron": "convencerse",
+          "hallazgos": [
+            {
+              "textoDetectado": "convencerse que",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "convencerse de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en convencerse. Confianza alta.",
+              "tipoHallazgo": "queismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "convencerse que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "tener certeza que",
+          "patron": "tener-certeza",
+          "hallazgos": [
+            {
+              "textoDetectado": "tener certeza que",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "tener certeza de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en tener certeza. Confianza alta.",
+              "tipoHallazgo": "queismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "tener certeza que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "hay posibilidad que",
+          "patron": "haber-posibilidad",
+          "hallazgos": [
+            {
+              "textoDetectado": "hay posibilidad que",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "hay posibilidad de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en haber posibilidad. Confianza media.",
+              "tipoHallazgo": "queismo",
+              "severidad": "media",
+              "confianza": "media",
+              "ventanaLocal": "hay posibilidad que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "a pesar que",
+          "patron": "a-pesar",
+          "hallazgos": [
+            {
+              "textoDetectado": "a pesar que",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "a pesar de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en a pesar. Confianza baja.",
+              "tipoHallazgo": "queismo",
+              "severidad": "baja",
+              "confianza": "baja",
+              "ventanaLocal": "a pesar que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "olvidarse que",
+          "patron": "olvidarse",
+          "hallazgos": [
+            {
+              "textoDetectado": "olvidarse que",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "olvidarse de que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible queismo en olvidarse. Confianza media.",
+              "tipoHallazgo": "queismo",
+              "severidad": "media",
+              "confianza": "media",
+              "ventanaLocal": "olvidarse que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "afirmar de que",
+          "patron": "afirmar",
+          "hallazgos": [
+            {
+              "textoDetectado": "afirmar de que",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "afirmar que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible dequeismo en afirmar. Confianza alta.",
+              "tipoHallazgo": "dequeismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "afirmar de que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "decir de que",
+          "patron": "decir",
+          "hallazgos": [
+            {
+              "textoDetectado": "decir de que",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "decir que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible dequeismo en decir. Confianza alta.",
+              "tipoHallazgo": "dequeismo",
+              "severidad": "alta",
+              "confianza": "alta",
+              "ventanaLocal": "decir de que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "sostener de que",
+          "patron": "sostener",
+          "hallazgos": [
+            {
+              "textoDetectado": "sostener de que",
+              "inicio": 0,
+              "fin": 15,
+              "sugerencias": [
+                "sostener que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible dequeismo en sostener. Confianza media.",
+              "tipoHallazgo": "dequeismo",
+              "severidad": "media",
+              "confianza": "media",
+              "ventanaLocal": "sostener de que",
+              "motorNlp": "fallback"
+            }
+          ]
+        },
+        {
+          "texto": "alegar de que",
+          "patron": "alegar",
+          "hallazgos": [
+            {
+              "textoDetectado": "alegar de que",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "alegar que"
+              ],
+              "aplicable": true,
+              "descripcion": "Posible dequeismo en alegar. Confianza media.",
+              "tipoHallazgo": "dequeismo",
+              "severidad": "media",
+              "confianza": "media",
+              "ventanaLocal": "alegar de que",
+              "motorNlp": "fallback"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nominalizacion",
+      "directorio": "nominalizacion",
+      "nombre": "Nominalización",
+      "descripcion": "Usa el verbo directamente en lugar de una construcción sustantivada",
+      "color": "#16a085",
+      "ejemplos": [
+        {
+          "texto": "poner en consideración",
+          "hallazgos": [
+            {
+              "textoDetectado": "poner en consideración",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "considerar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"poner en consideración\" por \"considerar\""
+            }
+          ]
+        },
+        {
+          "texto": "dar comienzo",
+          "hallazgos": [
+            {
+              "textoDetectado": "dar comienzo",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "comenzar",
+                "empezar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dar comienzo\" por \"comenzar\""
+            }
+          ]
+        },
+        {
+          "texto": "llegar a la conclusión",
+          "hallazgos": [
+            {
+              "textoDetectado": "llegar a la conclusión",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "concluir"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"llegar a la conclusión\" por \"concluir\""
+            }
+          ]
+        },
+        {
+          "texto": "poner de manifiesto",
+          "hallazgos": [
+            {
+              "textoDetectado": "poner de manifiesto",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "manifestar",
+                "decir",
+                "exponer"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"poner de manifiesto\" por \"manifestar\""
+            }
+          ]
+        },
+        {
+          "texto": "mantuvieron una reunión",
+          "hallazgos": [
+            {
+              "textoDetectado": "mantuvieron una reunión",
+              "inicio": 0,
+              "fin": 23,
+              "sugerencias": [
+                "se reunieron"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"mantuvieron una reunión\" por \"se reunieron\""
+            }
+          ]
+        },
+        {
+          "texto": "proceder a la entrega",
+          "hallazgos": [
+            {
+              "textoDetectado": "proceder a la entrega",
+              "inicio": 0,
+              "fin": 21,
+              "sugerencias": [
+                "entregar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"proceder a la entrega\" por \"entregar\""
+            }
+          ]
+        },
+        {
+          "texto": "realizar una inspección",
+          "hallazgos": [
+            {
+              "textoDetectado": "realizar una inspección",
+              "inicio": 0,
+              "fin": 23,
+              "sugerencias": [
+                "inspeccionar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"realizar una inspección\" por \"inspeccionar\""
+            }
+          ]
+        },
+        {
+          "texto": "efectuar la presentación",
+          "hallazgos": [
+            {
+              "textoDetectado": "efectuar la presentación",
+              "inicio": 0,
+              "fin": 24,
+              "sugerencias": [
+                "presentar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"efectuar la presentación\" por \"presentar\""
+            }
+          ]
+        },
+        {
+          "texto": "proceder a la presentación",
+          "hallazgos": [
+            {
+              "textoDetectado": "proceder a la presentación",
+              "inicio": 0,
+              "fin": 26,
+              "sugerencias": [
+                "presentar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"proceder a la presentación\" por \"presentar\""
+            }
+          ]
+        },
+        {
+          "texto": "proceder a la interposición",
+          "hallazgos": [
+            {
+              "textoDetectado": "proceder a la interposición",
+              "inicio": 0,
+              "fin": 27,
+              "sugerencias": [
+                "interponer"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"proceder a la interposición\" por \"interponer\""
+            }
+          ]
+        },
+        {
+          "texto": "interponer recurso de apelación",
+          "hallazgos": [
+            {
+              "textoDetectado": "interponer recurso de apelación",
+              "inicio": 0,
+              "fin": 31,
+              "sugerencias": [
+                "apelar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"interponer recurso de apelación\" por \"apelar\""
+            }
+          ]
+        },
+        {
+          "texto": "interponer recurso de queja",
+          "hallazgos": [
+            {
+              "textoDetectado": "interponer recurso de queja",
+              "inicio": 0,
+              "fin": 27,
+              "sugerencias": [
+                "quejarse",
+                "impugnar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"interponer recurso de queja\" por \"quejarse\""
+            }
+          ]
+        },
+        {
+          "texto": "interponer recurso de casación",
+          "hallazgos": [
+            {
+              "textoDetectado": "interponer recurso de casación",
+              "inicio": 0,
+              "fin": 30,
+              "sugerencias": [
+                "recurrir en casación"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"interponer recurso de casación\" por \"recurrir en casación\""
+            }
+          ]
+        },
+        {
+          "texto": "tener en consideración",
+          "hallazgos": [
+            {
+              "textoDetectado": "tener en consideración",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "considerar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"tener en consideración\" por \"considerar\""
+            }
+          ]
+        },
+        {
+          "texto": "tomar en consideración",
+          "hallazgos": [
+            {
+              "textoDetectado": "tomar en consideración",
+              "inicio": 0,
+              "fin": 22,
+              "sugerencias": [
+                "considerar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"tomar en consideración\" por \"considerar\""
+            }
+          ]
+        },
+        {
+          "texto": "hacer entrega",
+          "hallazgos": [
+            {
+              "textoDetectado": "hacer entrega",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "entregar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"hacer entrega\" por \"entregar\""
+            }
+          ]
+        },
+        {
+          "texto": "dar aviso",
+          "hallazgos": [
+            {
+              "textoDetectado": "dar aviso",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "avisar",
+                "notificar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dar aviso\" por \"avisar\""
+            }
+          ]
+        },
+        {
+          "texto": "llevar a cabo",
+          "hallazgos": [
+            {
+              "textoDetectado": "llevar a cabo",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "realizar",
+                "hacer"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"llevar a cabo\" por \"realizar\""
+            }
+          ]
+        },
+        {
+          "texto": "poner en conocimiento",
+          "hallazgos": [
+            {
+              "textoDetectado": "poner en conocimiento",
+              "inicio": 0,
+              "fin": 21,
+              "sugerencias": [
+                "informar",
+                "comunicar"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"poner en conocimiento\" por \"informar\""
+            }
+          ]
+        },
+        {
+          "texto": "dar cumplimiento",
+          "hallazgos": [
+            {
+              "textoDetectado": "dar cumplimiento",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "cumplir"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"dar cumplimiento\" por \"cumplir\""
+            }
+          ]
+        },
+        {
+          "texto": "proceder a efectuar",
+          "hallazgos": [
+            {
+              "textoDetectado": "proceder a efectuar",
+              "inicio": 0,
+              "fin": 19,
+              "sugerencias": [
+                "efectuar",
+                "hacer"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"proceder a efectuar\" por \"efectuar\""
+            }
+          ]
+        },
+        {
+          "texto": "no siendo para más",
+          "hallazgos": [
+            {
+              "textoDetectado": "no siendo para más",
+              "inicio": 0,
+              "fin": 18,
+              "sugerencias": [
+                "no habiendo otros temas que tratar",
+                "sin más asuntos"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"no siendo para más\" por \"no habiendo otros temas que tratar\""
+            }
+          ]
+        },
+        {
+          "texto": "se da por finalizado el acto",
+          "hallazgos": [
+            {
+              "textoDetectado": "se da por finalizado el acto",
+              "inicio": 0,
+              "fin": 28,
+              "sugerencias": [
+                "se termina la reunión",
+                "se finaliza el acto"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"se da por finalizado el acto\" por \"se termina la reunión\""
+            }
+          ]
+        },
+        {
+          "texto": "firmando los comparecientes",
+          "hallazgos": [
+            {
+              "textoDetectado": "firmando los comparecientes",
+              "inicio": 0,
+              "fin": 27,
+              "sugerencias": [
+                "firman los presentes",
+                "firman los que asistieron"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"firmando los comparecientes\" por \"firman los presentes\""
+            }
+          ]
+        },
+        {
+          "texto": "por ante mí",
+          "hallazgos": []
+        },
+        {
+          "texto": "que doy fe",
+          "hallazgos": [
+            {
+              "textoDetectado": "que doy fe",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "de lo cual certifico",
+                "lo que confirmo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"que doy fe\" por \"de lo cual certifico\""
+            }
+          ]
+        },
+        {
+          "texto": "cuyas demás condiciones personales",
+          "hallazgos": [
+            {
+              "textoDetectado": "cuyas demás condiciones personales",
+              "inicio": 0,
+              "fin": 34,
+              "sugerencias": [
+                "sus otros datos personales"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"cuyas demás condiciones personales\" por \"sus otros datos personales\""
+            }
+          ]
+        },
+        {
+          "texto": "obran en la causa",
+          "hallazgos": [
+            {
+              "textoDetectado": "obran en la causa",
+              "inicio": 0,
+              "fin": 17,
+              "sugerencias": [
+                "están en el expediente",
+                "ya figuran en el caso"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"obran en la causa\" por \"están en el expediente\""
+            }
+          ]
+        },
+        {
+          "texto": "por recibido",
+          "hallazgos": [
+            {
+              "textoDetectado": "por recibido",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "se recibe"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"por recibido\" por \"se recibe\""
+            }
+          ]
+        },
+        {
+          "texto": "agréguese",
+          "hallazgos": [
+            {
+              "textoDetectado": "agréguese",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "únase al expediente",
+                "incorpórese"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"agréguese\" por \"únase al expediente\""
+            }
+          ]
+        },
+        {
+          "texto": "téngase presente",
+          "hallazgos": [
+            {
+              "textoDetectado": "téngase presente",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "tómese nota",
+                "téngase en cuenta"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"téngase presente\" por \"tómese nota\""
+            }
+          ]
+        },
+        {
+          "texto": "exhibe y retiene",
+          "hallazgos": [
+            {
+              "textoDetectado": "exhibe y retiene",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "muestra y se queda con el original"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"exhibe y retiene\" por \"muestra y se queda con el original\""
+            }
+          ]
+        },
+        {
+          "texto": "a estudio para resolver",
+          "hallazgos": [
+            {
+              "textoDetectado": "a estudio para resolver",
+              "inicio": 0,
+              "fin": 23,
+              "sugerencias": [
+                "para ser analizado antes de la decisión",
+                "para dictar sentencia"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"a estudio para resolver\" por \"para ser analizado antes de la decisión\""
+            }
+          ]
+        },
+        {
+          "texto": "en razón de ello",
+          "hallazgos": [
+            {
+              "textoDetectado": "en razón de ello",
+              "inicio": 0,
+              "fin": 16,
+              "sugerencias": [
+                "por eso",
+                "por este motivo",
+                "entonces"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"en razón de ello\" por \"por eso\""
+            }
+          ]
+        },
+        {
+          "texto": "córrase vista",
+          "hallazgos": [
+            {
+              "textoDetectado": "córrase vista",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "avíseme a las partes para que revisen",
+                "comuníquese para que opinen"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"córrase vista\" por \"avíseme a las partes para que revisen\""
+            }
+          ]
+        },
+        {
+          "texto": "no se contempla el artículo",
+          "hallazgos": [
+            {
+              "textoDetectado": "no se contempla el artículo",
+              "inicio": 0,
+              "fin": 27,
+              "sugerencias": [
+                "el artículo no se aplica",
+                "el artículo no dice",
+                "no se incluye en el artículo"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"no se contempla el artículo\" por \"el artículo no se aplica\""
+            }
+          ]
+        },
+        {
+          "texto": "hágasele saber",
+          "hallazgos": [
+            {
+              "textoDetectado": "hágasele saber",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "infórmesele",
+                "avísele",
+                "notifíquese"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"hágasele saber\" por \"infórmesele\""
+            }
+          ]
+        },
+        {
+          "texto": "vengo por la presente",
+          "hallazgos": [
+            {
+              "textoDetectado": "vengo por la presente",
+              "inicio": 0,
+              "fin": 21,
+              "sugerencias": [
+                "vengo",
+                "me presento"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar \"vengo por la presente\" por \"vengo\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "numeros",
+      "directorio": "numeros",
+      "nombre": "Números",
+      "descripcion": "Sugiere reemplazar números escritos con palabras por dígitos, y números romanos por arábigos",
+      "color": "#2980b9",
+      "ejemplos": [
+        {
+          "texto": "treinta y dos",
+          "hallazgos": [
+            {
+              "textoDetectado": "treinta y dos",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "32",
+                "treinta y dos (32)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"treinta y dos\" → 32"
+            }
+          ]
+        },
+        {
+          "texto": "ciento veinte",
+          "hallazgos": [
+            {
+              "textoDetectado": "ciento veinte",
+              "inicio": 0,
+              "fin": 13,
+              "sugerencias": [
+                "120",
+                "ciento veinte (120)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"ciento veinte\" → 120"
+            }
+          ]
+        },
+        {
+          "texto": "mil doscientos",
+          "hallazgos": [
+            {
+              "textoDetectado": "mil doscientos",
+              "inicio": 0,
+              "fin": 14,
+              "sugerencias": [
+                "1200",
+                "mil doscientos (1200)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"mil doscientos\" → 1200"
+            }
+          ]
+        },
+        {
+          "texto": "dos millones",
+          "hallazgos": [
+            {
+              "textoDetectado": "dos millones",
+              "inicio": 0,
+              "fin": 12,
+              "sugerencias": [
+                "2000000",
+                "dos millones (2000000)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"dos millones\" → 2000000"
+            }
+          ]
+        },
+        {
+          "texto": "veintiún",
+          "hallazgos": [
+            {
+              "textoDetectado": "veintiún",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "21",
+                "veintiún (21)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"veintiún\" → 21"
+            }
+          ]
+        },
+        {
+          "texto": "doscientas",
+          "hallazgos": [
+            {
+              "textoDetectado": "doscientas",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "200",
+                "doscientas (200)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"doscientas\" → 200"
+            }
+          ]
+        },
+        {
+          "texto": "dieciseis",
+          "hallazgos": [
+            {
+              "textoDetectado": "dieciseis",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "16",
+                "dieciseis (16)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"dieciseis\" → 16"
+            }
+          ]
+        },
+        {
+          "texto": "ventiuno",
+          "hallazgos": [
+            {
+              "textoDetectado": "ventiuno",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "21",
+                "ventiuno (21)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"ventiuno\" → 21"
+            }
+          ]
+        },
+        {
+          "texto": "ventidos",
+          "hallazgos": [
+            {
+              "textoDetectado": "ventidos",
+              "inicio": 0,
+              "fin": 8,
+              "sugerencias": [
+                "22",
+                "ventidos (22)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"ventidos\" → 22"
+            }
+          ]
+        },
+        {
+          "texto": "ventiséis",
+          "hallazgos": [
+            {
+              "textoDetectado": "ventiséis",
+              "inicio": 0,
+              "fin": 9,
+              "sugerencias": [
+                "26",
+                "ventiséis (26)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"ventiséis\" → 26"
+            }
+          ]
+        },
+        {
+          "texto": "ventinueve",
+          "hallazgos": [
+            {
+              "textoDetectado": "ventinueve",
+              "inicio": 0,
+              "fin": 10,
+              "sugerencias": [
+                "29",
+                "ventinueve (29)"
+              ],
+              "aplicable": true,
+              "descripcion": "Usar dígito en lugar de la expresión: \"ventinueve\" → 29"
+            }
+          ]
+        },
+        {
+          "texto": "Capítulo IV",
+          "hallazgos": [
+            {
+              "textoDetectado": "IV",
+              "inicio": 9,
+              "fin": 11,
+              "sugerencias": [
+                "4"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar número romano \"IV\" por \"4\""
+            }
+          ]
+        },
+        {
+          "texto": "Siglo XXI",
+          "hallazgos": [
+            {
+              "textoDetectado": "XXI",
+              "inicio": 6,
+              "fin": 9,
+              "sugerencias": [
+                "21"
+              ],
+              "aplicable": true,
+              "descripcion": "Reemplazar número romano \"XXI\" por \"21\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siglas-sin-puntos",
+      "directorio": "siglas",
+      "nombre": "Siglas sin puntos",
+      "descripcion": "Detecta siglas escritas con puntos y sugiere la forma correcta (sin puntos).",
+      "color": "#8e44ad",
+      "ejemplos": [
+        {
+          "texto": "U.N.E.S.C.O",
+          "hallazgos": [
+            {
+              "textoDetectado": "U.N.E.S.C.O",
+              "inicio": 0,
+              "fin": 11,
+              "sugerencias": [
+                "UNESCO"
+              ],
+              "aplicable": true,
+              "descripcion": "Las siglas deben escribirse sin puntos: UNESCO"
+            }
+          ]
+        },
+        {
+          "texto": "O.N.U",
+          "hallazgos": [
+            {
+              "textoDetectado": "O.N.U",
+              "inicio": 0,
+              "fin": 5,
+              "sugerencias": [
+                "ONU"
+              ],
+              "aplicable": true,
+              "descripcion": "Las siglas deben escribirse sin puntos: ONU"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
