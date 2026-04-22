@@ -90,3 +90,13 @@ The form (`#waitlist`) has no backend. On submit it shows `#cta-thanks` and disa
 ## Analytics
 
 Google Analytics 4 (GA-W4QVKY0PQE) with custom events: `waitlist_signup`, `launch_cta_click`.
+
+## Resize de imagenes
+
+Se puede hacer con sips:
+
+`sips -z 630 1200 input.png --out output.png`
+
+Si se quiere cubrir el canal alpha con black:
+
+`sips -z 630 1200 --padColor 000000 input.png --out output.png`
