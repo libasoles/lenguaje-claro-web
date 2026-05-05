@@ -1,6 +1,6 @@
 # Lenguaje Claro Web
 
-![Lenguaje Claro Banner](assets/banner.png)
+![Lenguaje Claro Banner](public/assets/banner.png)
 
 Este directorio contiene la **web de la extensión Lenguaje Claro**.
 
