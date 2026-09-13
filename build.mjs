@@ -29,6 +29,10 @@ const pages = [
     entry: "ejemplos.jsx",
     output: "ejemplos.html",
   },
+  {
+    entry: "resaltador.jsx",
+    output: "resaltador.html",
+  },
 ];
 
 async function importPageComponent(entryPath) {
