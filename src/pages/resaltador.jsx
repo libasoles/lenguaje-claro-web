@@ -31,7 +31,12 @@ export default function ResaltadorPage() {
       twitterDescription="Analizá un PDF jurídico y obtené un PDF anotado con los hallazgos de Lenguaje Claro resaltados."
       structuredData={structuredData}
       extraHead={<link rel="stylesheet" href="resaltador.css" />}
-      afterBody={<script type="module" src="resaltador-uploader.js"></script>}
+      afterBody={
+        <>
+          <script type="module" src="resaltador-uploader.js"></script>
+          <script type="module" src="resaltador-visor.js"></script>
+        </>
+      }
     >
       <Header />
       <main>
@@ -127,6 +132,28 @@ export default function ResaltadorPage() {
               servidor para analizarlo. Es un servicio distinto de la Extensión,
               que analiza los documentos de Google Docs en tu navegador.
             </p>
+          </div>
+        </section>
+
+        <section class="wrap visor" data-resaltador-visor hidden>
+          <div class="visor-header">
+            <div>
+              <span class="resaltador-kicker">Vista del documento</span>
+              <h2>Hallazgos sobre el PDF original.</h2>
+            </div>
+            <div class="visor-controls">
+              <button type="button" data-visor-zoom-out aria-label="Alejar el PDF">−</button>
+              <button type="button" data-visor-zoom-in aria-label="Acercar el PDF">+</button>
+              <p role="status" data-visor-status></p>
+            </div>
+          </div>
+          <p class="visor-scanned" data-visor-scanned hidden></p>
+          <ul class="visor-counts" data-visor-counts></ul>
+          <div class="visor-layout">
+            <div class="visor-pages" data-visor-pages></div>
+            <aside class="visor-detail" data-visor-detail aria-live="polite">
+              <p>Elegí un resaltado para ver la Regla y su sugerencia.</p>
+            </aside>
           </div>
         </section>
 
