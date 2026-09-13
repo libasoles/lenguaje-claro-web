@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { h } from "preact";
@@ -11,6 +11,26 @@ const srcDir = path.join(__dirname, "src");
 const pagesDir = path.join(srcDir, "pages");
 const publicDir = path.join(__dirname, "public");
 const isWatchMode = process.argv.includes("--watch");
+
+// pdf.js only runs client-side (loaded by public/resaltador-uploader.js via
+// dynamic import). Here we just copy its browser build out of node_modules
+// into public/vendor — no pdf.js code ever executes during this Node build.
+const pdfjsVendorFiles = [
+  { from: "pdfjs-dist/build/pdf.min.mjs", to: "vendor/pdfjs/pdf.min.mjs" },
+  {
+    from: "pdfjs-dist/build/pdf.worker.min.mjs",
+    to: "vendor/pdfjs/pdf.worker.min.mjs",
+  },
+];
+
+async function copyPdfjsVendorFiles() {
+  for (const file of pdfjsVendorFiles) {
+    const from = path.join(__dirname, "node_modules", file.from);
+    const to = path.join(publicDir, file.to);
+    await mkdir(path.dirname(to), { recursive: true });
+    await copyFile(from, to);
+  }
+}
 
 const pages = [
   {
@@ -51,6 +71,7 @@ async function importPageComponent(entryPath) {
 
 async function build() {
   await mkdir(publicDir, { recursive: true });
+  await copyPdfjsVendorFiles();
 
   for (const page of pages) {
     const entryPath = path.join(pagesDir, page.entry);
