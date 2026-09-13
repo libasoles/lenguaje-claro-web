@@ -496,6 +496,27 @@ const mainHtml = (
       </div>
     </section>
 
+    <section class="block wrap resaltador-teaser" id="resaltador-teaser">
+      <div class="resaltador-teaser-card">
+        <span class="resaltador-teaser-tag">
+          Otra herramienta · procesa en un servidor
+        </span>
+        <h2 class="resaltador-teaser-title">
+          ¿Trabajás con PDF en vez de Google Docs?
+        </h2>
+        <p class="resaltador-teaser-body">
+          El <strong>Resaltador de PDF</strong> analiza tu documento y te
+          devuelve el mismo PDF con los hallazgos de Lenguaje Claro
+          resaltados. A diferencia de la Extensión, que corre en tu
+          navegador, el Resaltador envía el archivo a un servidor para
+          analizarlo.
+        </p>
+        <a class="btn btn-ghost" href="resaltador.html">
+          Probar el Resaltador <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
     <section class="block wrap">
       <div class="block-header">
         <div class="kicker">

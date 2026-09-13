@@ -1150,6 +1150,47 @@ span.check.no {
   text-align: center;
 }
 
+/* =========================================================
+   resaltador teaser (home)
+   ========================================================= */
+
+.resaltador-teaser-card {
+  background: var(--ochre-soft);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--ochre);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 720px;
+}
+.resaltador-teaser-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.resaltador-teaser-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0;
+  max-width: 20ch;
+}
+.resaltador-teaser-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.resaltador-teaser-body strong {
+  color: var(--ink);
+}
+
 .note-box {
   margin-top: 24px;
   padding: 20px 22px;
