@@ -7,6 +7,7 @@
    ========================================================= */
 
 import { validateLocalPdf, formatMegabytes } from "./resaltador-validation.mjs";
+import { track } from "./resaltador-analytics.mjs";
 
 const PDFJS_LIB_URL = new URL("vendor/pdfjs/pdf.min.mjs", import.meta.url);
 const PDFJS_WORKER_URL = new URL(
@@ -93,6 +94,7 @@ function init() {
         "ready",
         `Listo: “${file.name}” · ${formatMegabytes(file.size)} · ${pageCount} ${pluralPages(pageCount)}.`,
       );
+      track("resaltador_upload", {});
 
       window.dispatchEvent(
         new CustomEvent("resaltador:file-ready", {
@@ -110,6 +112,12 @@ function init() {
           ? error.message
           : "No pudimos procesar el archivo.",
       );
+      // `error.code` viene de `PdfValidationError` (resaltador-validation.mjs):
+      // too_large, not_pdf, too_many_pages, no_file, unreadable. Es un
+      // vocabulario propio del chequeo local, distinto de los códigos
+      // PDF_CON_CONTRASEÑA/PDF_INVALIDO/... que devuelve el servidor y que
+      // resaltador-visor.js reporta por su cuenta en el mismo evento.
+      track("resaltador_error", { tipo: (error && error.code) || "desconocido" });
     } finally {
       setBusy(false);
     }

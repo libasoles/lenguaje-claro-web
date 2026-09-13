@@ -1,7 +1,20 @@
-import { rectsForPage, endpointFor } from "./resaltador-visor.mjs";
+import {
+  bytesDeBase64,
+  endpointFor,
+  esTodoEscaneado,
+  estadoDeErrorServidor,
+  nombreDeDescarga,
+  rectsForPage,
+} from "./resaltador-visor.mjs";
+import { track } from "./resaltador-analytics.mjs";
 
 const PDFJS_LIB_URL = new URL("vendor/pdfjs/pdf.min.mjs", import.meta.url);
 const PDFJS_WORKER_URL = new URL("vendor/pdfjs/pdf.worker.min.mjs", import.meta.url);
+
+// C5: "Falla o timeout del servidor → reintentar". El Lambda del servidor
+// tiene un timeout de 120s (ver infra/resaltador_stack.py); 130s le da
+// margen para responder antes de que el cliente lo dé por perdido.
+const TIMEOUT_DE_ANALISIS_MS = 130_000;
 
 let pdfjsLibPromise;
 
@@ -35,6 +48,7 @@ function renderHallazgoDetail(detail, hallazgo) {
 
 async function renderPage({ pdf, pageNumber, hallazgos, shell, scale }) {
   const page = await pdf.getPage(pageNumber);
+  const pageHeight = page.view[3] - page.view[1];
   const viewport = page.getViewport({ scale });
   shell.replaceChildren();
   const canvas = document.createElement("canvas");
@@ -45,7 +59,7 @@ async function renderPage({ pdf, pageNumber, hallazgos, shell, scale }) {
   layer.className = "visor-highlights";
   layer.style.width = `${canvas.width}px`;
   layer.style.height = `${canvas.height}px`;
-  for (const rect of rectsForPage(hallazgos, pageNumber, viewport)) {
+  for (const rect of rectsForPage(hallazgos, pageNumber, viewport, pageHeight)) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "visor-highlight";
@@ -67,10 +81,14 @@ function init() {
   const detail = root.querySelector("[data-visor-detail]");
   const counts = root.querySelector("[data-visor-counts]");
   const scanned = root.querySelector("[data-visor-scanned]");
+  const downloadButton = root.querySelector("[data-visor-download]");
+  const retryButton = root.querySelector("[data-visor-retry]");
   const endpoint = endpointFor(window.location, root.dataset.endpoint);
   let hallazgosActuales = [];
   let pdfActual;
   let scale = 1.35;
+  let archivoActual = null;
+  let descargaActual = null; // { bytes, nombre }
 
   function rerenderPages() {
     if (!pdfActual) return;
@@ -99,44 +117,125 @@ function init() {
     if (id) renderHallazgoDetail(detail, hallazgosActuales.find((item) => item.id === id));
   });
 
-  window.addEventListener("resaltador:file-ready", async (event) => {
-    const { file } = event.detail;
+  downloadButton.addEventListener("click", () => {
+    if (!descargaActual) return;
+    // C4: los bytes ya están en memoria desde la respuesta del servidor —
+    // entre este clic y el diálogo de guardado no hay ningún request.
+    const blob = new Blob([descargaActual.bytes], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = descargaActual.nombre;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    track("resaltador_descarga", { hallazgos: hallazgosActuales.length });
+  });
+
+  retryButton.addEventListener("click", () => {
+    if (archivoActual) analizar(archivoActual);
+  });
+
+  function mostrarErrorDeServidor(codigo) {
+    const estado = estadoDeErrorServidor(codigo);
+    setText(status, estado.mensaje);
+    retryButton.hidden = !estado.reintentable;
+    downloadButton.hidden = true;
+    track("resaltador_error", { tipo: codigo });
+  }
+
+  async function analizar(file) {
+    archivoActual = file;
     root.hidden = false;
     pages.replaceChildren();
     counts.replaceChildren();
+    downloadButton.hidden = true;
+    retryButton.hidden = true;
+    descargaActual = null;
     setText(status, "Analizando el PDF…");
+    setText(scanned, "");
+
+    let response;
+    const timeoutController = new AbortController();
+    const timeoutId = setTimeout(() => timeoutController.abort(), TIMEOUT_DE_ANALISIS_MS);
     try {
-      const response = await fetch(endpoint, { method: "POST", body: file });
-      const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error?.mensaje || "No pudimos analizar el PDF.");
-      const hallazgos = payload.hallazgos;
-      hallazgosActuales = hallazgos;
-      const hallazgosVisibles = hallazgos.filter(
-        (hallazgo) => hallazgo.pintado !== false && hallazgo.rects.length,
+      response = await fetch(endpoint, { method: "POST", body: file, signal: timeoutController.signal });
+    } catch (error) {
+      mostrarErrorDeServidor(error.name === "AbortError" ? "TIMEOUT" : "ERROR_DE_RED");
+      return;
+    } finally {
+      clearTimeout(timeoutId);
+    }
+
+    let payload;
+    try {
+      payload = await response.json();
+    } catch {
+      mostrarErrorDeServidor("ERROR_INTERNO");
+      return;
+    }
+
+    if (!response.ok) {
+      mostrarErrorDeServidor(payload.error?.codigo || "ERROR_INTERNO");
+      return;
+    }
+
+    const hallazgos = payload.hallazgos;
+    hallazgosActuales = hallazgos;
+    const metadatos = payload.metadatos;
+    const scannedPages = metadatos.paginas_sin_texto;
+
+    descargaActual = {
+      bytes: bytesDeBase64(payload.pdf_anotado_base64),
+      nombre: nombreDeDescarga(file.name),
+    };
+    downloadButton.hidden = false;
+
+    track("resaltador_analisis_ok", {
+      paginas: metadatos.cantidad_de_paginas,
+      hallazgos: hallazgos.length,
+    });
+
+    if (esTodoEscaneado(metadatos.cantidad_de_paginas, scannedPages)) {
+      setText(
+        scanned,
+        "Este PDF parece ser una imagen escaneada: no tiene texto seleccionable. Todavía no podemos analizar documentos escaneados.",
       );
-      const grouped = new Map();
-      for (const hallazgo of hallazgosVisibles) {
-        grouped.set(hallazgo.regla, [...(grouped.get(hallazgo.regla) || []), hallazgo]);
-      }
-      for (const group of grouped.values()) {
-        const item = document.createElement("li");
-        item.style.setProperty("--hallazgo-color", group[0].color);
-        item.textContent = `${group[0].nombre}: ${group.length}`;
-        counts.append(item);
-      }
-      const scannedPages = payload.metadatos.paginas_sin_texto;
-      setText(scanned, scannedPages.length ? `No se analizaron las páginas ${scannedPages.join(", ")} porque no tienen texto seleccionable.` : "");
-      const pdfjsLib = await loadPdfjs();
-      pdfActual = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
-      const renderWhenVisible = (shell) =>
-        renderPage({
-          pdf: pdfActual,
-          pageNumber: Number(shell.dataset.page),
-          hallazgos,
-          shell,
-          scale,
-        });
-      const observer = new IntersectionObserver((entries) => {
+      track("resaltador_pdf_escaneado", {});
+    } else if (scannedPages.length) {
+      setText(
+        scanned,
+        `No se analizaron las páginas ${scannedPages.join(", ")} porque no tienen texto seleccionable.`,
+      );
+    }
+
+    const hallazgosVisibles = hallazgos.filter(
+      (hallazgo) => hallazgo.pintado !== false && hallazgo.rects.length,
+    );
+    const grouped = new Map();
+    for (const hallazgo of hallazgosVisibles) {
+      grouped.set(hallazgo.regla, [...(grouped.get(hallazgo.regla) || []), hallazgo]);
+    }
+    for (const group of grouped.values()) {
+      const item = document.createElement("li");
+      item.style.setProperty("--hallazgo-color", group[0].color);
+      item.textContent = `${group[0].nombre}: ${group.length}`;
+      counts.append(item);
+    }
+
+    const pdfjsLib = await loadPdfjs();
+    pdfActual = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+    const renderWhenVisible = (shell) =>
+      renderPage({
+        pdf: pdfActual,
+        pageNumber: Number(shell.dataset.page),
+        hallazgos,
+        shell,
+        scale,
+      });
+    const observer = new IntersectionObserver(
+      (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             observer.unobserve(entry.target);
@@ -145,20 +244,23 @@ function init() {
             });
           }
         }
-      }, { root: pages, rootMargin: "320px" });
-      for (let pageNumber = 1; pageNumber <= pdfActual.numPages; pageNumber += 1) {
-        const shell = document.createElement("article");
-        shell.className = "visor-page visor-page-pending";
-        shell.dataset.page = String(pageNumber);
-        shell.textContent = `Cargando página ${pageNumber}…`;
-        pages.append(shell);
-        observer.observe(shell);
-      }
-      setText(status, `${hallazgos.length} hallazgos encontrados.`);
-      root.scrollIntoView({ behavior: "smooth", block: "start" });
-    } catch (error) {
-      setText(status, error.message || "No pudimos analizar el PDF. Intentá de nuevo.");
+      },
+      { root: pages, rootMargin: "320px" },
+    );
+    for (let pageNumber = 1; pageNumber <= pdfActual.numPages; pageNumber += 1) {
+      const shell = document.createElement("article");
+      shell.className = "visor-page visor-page-pending";
+      shell.dataset.page = String(pageNumber);
+      shell.textContent = `Cargando página ${pageNumber}…`;
+      pages.append(shell);
+      observer.observe(shell);
     }
+    setText(status, `${hallazgos.length} hallazgos encontrados.`);
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  window.addEventListener("resaltador:file-ready", (event) => {
+    analizar(event.detail.file);
   });
 }
 

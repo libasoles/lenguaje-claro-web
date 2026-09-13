@@ -263,7 +263,8 @@
   gap: 8px;
 }
 
-.visor-controls button {
+.visor-controls button[data-visor-zoom-out],
+.visor-controls button[data-visor-zoom-in] {
   width: 32px;
   height: 32px;
   border: 1px solid var(--rule-strong);
@@ -274,9 +275,24 @@
   cursor: pointer;
 }
 
-.visor-controls button:hover { background: var(--bg-sunk); }
+.visor-controls button[data-visor-zoom-out]:hover,
+.visor-controls button[data-visor-zoom-in]:hover { background: var(--bg-sunk); }
 
 .visor-controls p { margin: 0 0 0 8px; }
+
+.visor-controls .btn {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* `.btn` fija `display: inline-flex`, que pisa el `display: none` del
+   atributo `hidden` del navegador porque las reglas de autor ganan sobre las
+   del user-agent aunque empaten en especificidad. Sin esto, "Reintentar" y
+   "Descargar" quedan visibles con `hidden` puesto. */
+.visor-download[hidden],
+.visor-retry[hidden] {
+  display: none;
+}
 
 .visor-scanned {
   margin: 0 0 18px;

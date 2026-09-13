@@ -142,9 +142,25 @@ export default function ResaltadorPage() {
               <h2>Hallazgos sobre el PDF original.</h2>
             </div>
             <div class="visor-controls">
+              <button
+                type="button"
+                class="btn btn-primary visor-download"
+                data-visor-download
+                hidden
+              >
+                Descargar PDF anotado
+              </button>
               <button type="button" data-visor-zoom-out aria-label="Alejar el PDF">−</button>
               <button type="button" data-visor-zoom-in aria-label="Acercar el PDF">+</button>
               <p role="status" data-visor-status></p>
+              <button
+                type="button"
+                class="btn btn-ghost visor-retry"
+                data-visor-retry
+                hidden
+              >
+                Reintentar
+              </button>
             </div>
           </div>
           <p class="visor-scanned" data-visor-scanned hidden></p>
