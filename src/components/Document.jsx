@@ -99,6 +99,14 @@ export default function Document({
     }
     gtag("js", new Date());
     gtag("config", "G-W4QVKY0PQE");
+
+    function trackEvent(name, params) {
+      if (typeof gtag !== "function") return;
+      gtag("event", name, {
+        event_category: "engagement",
+        ...params,
+      });
+    }
         `,
           }}
         />
@@ -160,7 +168,7 @@ export default function Document({
             __html: `
         // Install button clicks
            document
-             .querySelectorAll('a[href="#descargar"], a.nav-cta')
+             .querySelectorAll('a.nav-cta, a[href*="chromewebstore"]')
              .forEach(function (el) {
                el.addEventListener("click", function () {
                  trackEvent("launch_cta_click", {
