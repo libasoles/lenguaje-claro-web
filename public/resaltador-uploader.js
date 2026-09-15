@@ -88,7 +88,7 @@ function init() {
       root.dataset.state = "ready";
       setStatus(
         "ready",
-        `Listo: “${file.name}” · ${formatMegabytes(file.size)} · ${pageCount} ${pluralPages(pageCount)}.`,
+        `Analizando: “${file.name}” · ${formatMegabytes(file.size)} · ${pageCount} ${pluralPages(pageCount)}.`,
       );
       track("resaltador_upload", {});
 
