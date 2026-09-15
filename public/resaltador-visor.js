@@ -128,6 +128,7 @@ function init() {
   const scanned = root.querySelector("[data-visor-scanned]");
   const loading = root.querySelector("[data-visor-loading]");
   const loadingStep = root.querySelector("[data-visor-loading-step]");
+  const layout = root.querySelector("[data-visor-layout]");
   const downloadButton = root.querySelector("[data-visor-download]");
   const retryButton = root.querySelector("[data-visor-retry]");
   const endpoint = endpointFor(window.location, root.dataset.endpoint);
@@ -218,6 +219,7 @@ function init() {
     retryButton.hidden = true;
     descargaActual = null;
     loading.hidden = false;
+    layout.hidden = true;
     setText(status, "");
     setText(scanned, "");
     iniciarPasosDeAnalisis();
@@ -315,6 +317,7 @@ function init() {
     }
     detenerPasosDeAnalisis();
     loading.hidden = true;
+    layout.hidden = false;
     setText(status, "");
   }
 

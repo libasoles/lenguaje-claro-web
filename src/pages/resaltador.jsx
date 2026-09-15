@@ -158,6 +158,14 @@ export default function ResaltadorPage() {
               <h2>Hallazgos.</h2>
             </div>
             <div class="visor-controls">
+              <button
+                type="button"
+                class="btn btn-primary visor-download"
+                data-visor-download
+                hidden
+              >
+                Descargar PDF anotado
+              </button>
               <div class="visor-zoom-controls">
                 <button
                   type="button"
@@ -174,14 +182,6 @@ export default function ResaltadorPage() {
                   +
                 </button>
               </div>
-              <button
-                type="button"
-                class="btn btn-primary visor-download"
-                data-visor-download
-                hidden
-              >
-                Descargar PDF anotado
-              </button>
               <p role="status" data-visor-status></p>
               <button
                 type="button"
@@ -207,7 +207,7 @@ export default function ResaltadorPage() {
             </p>
           </div>
           <p class="visor-scanned" data-visor-scanned hidden></p>
-          <div class="visor-layout">
+          <div class="visor-layout" data-visor-layout hidden>
             <div class="visor-pages" data-visor-pages></div>
             <aside class="visor-detail" data-visor-detail aria-live="polite">
               <p>Los hallazgos aparecerán acá cuando termine el análisis.</p>
