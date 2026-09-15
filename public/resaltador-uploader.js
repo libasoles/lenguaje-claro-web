@@ -39,9 +39,8 @@ function init() {
   const dropzone = root.querySelector("[data-uploader-dropzone]");
   const input = root.querySelector("[data-uploader-input]");
   const statusEl = root.querySelector("[data-uploader-status]");
-  const resetButton = root.querySelector("[data-uploader-reset]");
 
-  if (!dropzone || !input || !statusEl || !resetButton) return;
+  if (!dropzone || !input || !statusEl) return;
 
   let selectedFile = null;
   let dragDepth = 0;
@@ -68,7 +67,6 @@ function init() {
     selectedFile = null;
     input.value = "";
     root.dataset.state = "idle";
-    resetButton.hidden = true;
     setStatus(null);
     window.dispatchEvent(
       new CustomEvent("resaltador:file-cleared", { detail: null }),
@@ -80,7 +78,6 @@ function init() {
     if (!file) return;
 
     root.dataset.state = "checking";
-    resetButton.hidden = true;
     setStatus("checking", `Revisando “${file.name}”…`);
 
     try {
@@ -89,7 +86,6 @@ function init() {
 
       selectedFile = file;
       root.dataset.state = "ready";
-      resetButton.hidden = false;
       setStatus(
         "ready",
         `Listo: “${file.name}” · ${formatMegabytes(file.size)} · ${pageCount} ${pluralPages(pageCount)}.`,
@@ -105,7 +101,6 @@ function init() {
       selectedFile = null;
       input.value = "";
       root.dataset.state = "error";
-      resetButton.hidden = true;
       setStatus(
         "error",
         error && error.message
@@ -147,8 +142,6 @@ function init() {
     dragDepth = 0;
     handleFiles(event.dataTransfer && event.dataTransfer.files);
   });
-
-  resetButton.addEventListener("click", reset);
 
   root.dataset.state = "idle";
 

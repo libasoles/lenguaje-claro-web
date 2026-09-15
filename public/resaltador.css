@@ -257,14 +257,18 @@
 
 .visor-controls {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: end;
+  align-items: flex-end;
   gap: 8px;
 }
 
-.visor-controls button[data-visor-zoom-out],
-.visor-controls button[data-visor-zoom-in] {
+.visor-zoom-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.visor-zoom-controls button {
   width: 32px;
   height: 32px;
   border: 1px solid var(--rule-strong);
@@ -275,14 +279,42 @@
   cursor: pointer;
 }
 
-.visor-controls button[data-visor-zoom-out]:hover,
-.visor-controls button[data-visor-zoom-in]:hover { background: var(--bg-sunk); }
+.visor-zoom-controls button:hover { background: var(--bg-sunk); }
 
 .visor-controls p { margin: 0 0 0 8px; }
 
 .visor-controls .btn {
   padding: 8px 14px;
   font-size: 13px;
+}
+
+.visor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 180px;
+  margin-top: 24px;
+  border: 1px solid var(--rule);
+  background: var(--bg-sunk);
+  color: var(--ink-2);
+}
+
+.visor-loading[hidden] { display: none; }
+
+.visor-loading p { margin: 0; }
+
+.visor-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--rule-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: visor-spin 0.75s linear infinite;
+}
+
+@keyframes visor-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* `.btn` fija `display: inline-flex`, que pisa el `display: none` del
@@ -299,23 +331,6 @@
   padding: 10px 12px;
   border-left: 3px solid var(--resaltador-notice-rule);
   background: var(--resaltador-notice-bg);
-}
-
-.visor-counts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0;
-  margin: 0 0 24px;
-  list-style: none;
-}
-
-.visor-counts li {
-  padding: 6px 10px;
-  border: 1px solid color-mix(in oklch, var(--hallazgo-color), var(--rule) 55%);
-  border-radius: 999px;
-  color: var(--ink-2);
-  font-size: 13px;
 }
 
 .visor-layout {
@@ -374,12 +389,22 @@
 .visor-detail {
   position: sticky;
   top: 18px;
-  padding: 18px;
-  border: 1px solid var(--rule);
-  background: var(--bg-elev);
 }
 
 .visor-detail h3 { margin-top: 0; }
+
+.visor-hallazgos-list {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.visor-hallazgos-list li {
+  padding-left: 12px;
+  border-left: 3px solid var(--hallazgo-color);
+}
 
 @media (max-width: 760px) {
   .visor-header,

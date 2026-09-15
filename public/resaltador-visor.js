@@ -39,11 +39,42 @@ function renderHallazgoDetail(detail, hallazgo) {
   const description = document.createElement("p");
   description.textContent = hallazgo.descripcion;
   detail.append(title, description);
-  if (hallazgo.sugerencias.length) {
+  // La descripción de varias reglas ya trae la sugerencia citada
+  // (`Reemplazar por "X".`); mostrarla de nuevo acá sería redundante.
+  if (hallazgo.sugerencias.length && !hallazgo.descripcion.includes(hallazgo.sugerencias[0])) {
     const suggestions = document.createElement("p");
     suggestions.textContent = `Sugerencia: ${hallazgo.sugerencias.join(" · ")}`;
     detail.append(suggestions);
   }
+}
+
+function renderHallazgosSummary(detail, hallazgos) {
+  detail.replaceChildren();
+  const title = document.createElement("h3");
+  title.textContent = `${hallazgos.length} hallazgos encontrados.`;
+  detail.append(title);
+
+  const grouped = new Map();
+  for (const hallazgo of hallazgos) {
+    grouped.set(hallazgo.regla, [...(grouped.get(hallazgo.regla) || []), hallazgo]);
+  }
+
+  if (!grouped.size) {
+    const empty = document.createElement("p");
+    empty.textContent = "No encontramos categorías para revisar.";
+    detail.append(empty);
+    return;
+  }
+
+  const list = document.createElement("ul");
+  list.className = "visor-hallazgos-list";
+  for (const group of grouped.values()) {
+    const item = document.createElement("li");
+    item.style.setProperty("--hallazgo-color", group[0].color);
+    item.textContent = `${group[0].nombre}: ${group.length}`;
+    list.append(item);
+  }
+  detail.append(list);
 }
 
 async function renderPage({ pdf, pageNumber, hallazgos, shell, scale }) {
@@ -79,8 +110,8 @@ function init() {
   const pages = root.querySelector("[data-visor-pages]");
   const status = root.querySelector("[data-visor-status]");
   const detail = root.querySelector("[data-visor-detail]");
-  const counts = root.querySelector("[data-visor-counts]");
   const scanned = root.querySelector("[data-visor-scanned]");
+  const loading = root.querySelector("[data-visor-loading]");
   const downloadButton = root.querySelector("[data-visor-download]");
   const retryButton = root.querySelector("[data-visor-retry]");
   const endpoint = endpointFor(window.location, root.dataset.endpoint);
@@ -139,6 +170,7 @@ function init() {
 
   function mostrarErrorDeServidor(codigo) {
     const estado = estadoDeErrorServidor(codigo);
+    loading.hidden = true;
     setText(status, estado.mensaje);
     retryButton.hidden = !estado.reintentable;
     downloadButton.hidden = true;
@@ -149,11 +181,12 @@ function init() {
     archivoActual = file;
     root.hidden = false;
     pages.replaceChildren();
-    counts.replaceChildren();
+    detail.replaceChildren();
     downloadButton.hidden = true;
     retryButton.hidden = true;
     descargaActual = null;
-    setText(status, "Analizando el PDF…");
+    loading.hidden = false;
+    setText(status, "");
     setText(scanned, "");
 
     let response;
@@ -210,19 +243,7 @@ function init() {
       );
     }
 
-    const hallazgosVisibles = hallazgos.filter(
-      (hallazgo) => hallazgo.pintado !== false && hallazgo.rects.length,
-    );
-    const grouped = new Map();
-    for (const hallazgo of hallazgosVisibles) {
-      grouped.set(hallazgo.regla, [...(grouped.get(hallazgo.regla) || []), hallazgo]);
-    }
-    for (const group of grouped.values()) {
-      const item = document.createElement("li");
-      item.style.setProperty("--hallazgo-color", group[0].color);
-      item.textContent = `${group[0].nombre}: ${group.length}`;
-      counts.append(item);
-    }
+    renderHallazgosSummary(detail, hallazgos);
 
     const pdfjsLib = await loadPdfjs();
     pdfActual = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
@@ -255,7 +276,8 @@ function init() {
       pages.append(shell);
       observer.observe(shell);
     }
-    setText(status, `${hallazgos.length} hallazgos encontrados.`);
+    loading.hidden = true;
+    setText(status, "");
     root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 

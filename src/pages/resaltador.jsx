@@ -44,18 +44,21 @@ export default function ResaltadorPage() {
           <div class="wrap resaltador-hero-grid">
             <div class="resaltador-intro">
               <span class="resaltador-eyebrow">
-                <span aria-hidden="true"></span> Resaltador de PDF
+                <span aria-hidden="true"></span> Resaltador
               </span>
               <h1>
-                Leé el expediente con <em>otra claridad</em>.
+                Cargá un <em>archivo PDF</em>.
               </h1>
               <p class="resaltador-lede">
-                Subí un PDF y recibí un PDF anotado: los tramos que activan una
-                Regla quedan resaltados sobre el documento original, con una
-                página de hallazgos al final.
+                Subí un PDF y recibí una versión anotada. Asegurate de no
+                exponer datos sensibles.
               </p>
               <div class="uploader" data-resaltador-uploader data-state="idle">
-                <label class="uploader-drop" data-uploader-dropzone for="resaltador-file-input">
+                <label
+                  class="uploader-drop"
+                  data-uploader-dropzone
+                  for="resaltador-file-input"
+                >
                   <input
                     type="file"
                     id="resaltador-file-input"
@@ -64,7 +67,14 @@ export default function ResaltadorPage() {
                     data-uploader-input
                   />
                   <span class="uploader-drop-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
                       <path d="M12 3v11" />
                       <path d="M7.5 10.5L12 15l4.5-4.5" />
                       <path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
@@ -74,12 +84,16 @@ export default function ResaltadorPage() {
                     Soltá el PDF acá o{" "}
                     <span class="uploader-drop-link">elegí un archivo</span>
                   </span>
-                  <span class="uploader-hint">PDF · hasta 5 MB · hasta 100 páginas</span>
+                  <span class="uploader-hint">
+                    PDF · hasta 5 MB · hasta 100 páginas
+                  </span>
                 </label>
 
                 <p class="uploader-server-note">
-                  <strong>Antes de soltarlo:</strong> este archivo se envía a
-                  un servidor para analizarlo.
+                  <strong>Importante:</strong> este archivo se envía a un
+                  servidor para analizarlo, y podría re-enviarse a una IA. Es
+                  importante que tu archivo esté previamente anonimizado, o no
+                  exponga datos sensibles.
                 </p>
 
                 <p
@@ -88,36 +102,34 @@ export default function ResaltadorPage() {
                   data-uploader-status
                   hidden
                 ></p>
-
-                <button
-                  type="button"
-                  class="uploader-reset"
-                  data-uploader-reset
-                  hidden
-                >
-                  Elegir otro archivo
-                </button>
               </div>
             </div>
 
-            <div class="resaltador-preview" aria-label="Vista previa de un PDF anotado">
+            <div
+              class="resaltador-preview"
+              aria-label="Vista previa de un PDF anotado"
+            >
               <div class="resaltador-preview-top">
                 <span>PDF anotado</span>
                 <span>página 4 de 12</span>
               </div>
               <div class="resaltador-paper">
                 <span class="resaltador-paper-label">EXPEDIENTE · 2026</span>
-                <p>Se hace saber que la presentación será analizada dentro del plazo correspondiente.</p>
+                <p>
+                  Se hace saber que la presentación <mark>será analizada</mark>{" "}
+                  dentro del plazo correspondiente.
+                </p>
                 <p>
                   La parte interesada deberá acompañar la documentación que
                   estime pertinente para acreditar lo solicitado.
                 </p>
                 <p>
-                  Por lo expuesto, se dispone <mark>proceder a la notificación</mark>{" "}
-                  de las personas involucradas.
+                  Por lo expuesto, se dispone{" "}
+                  <mark>proceder a la notificación</mark> de las personas
+                  involucradas.
                 </p>
                 <div class="resaltador-legend">
-                  <span></span> Rodeo innecesario
+                  <span></span> Voz pasiva
                 </div>
               </div>
             </div>
@@ -126,11 +138,15 @@ export default function ResaltadorPage() {
 
         <section class="resaltador-notice">
           <div class="wrap resaltador-notice-inner">
-            <span class="resaltador-notice-icon" aria-hidden="true">!</span>
+            <span class="resaltador-notice-icon" aria-hidden="true">
+              !
+            </span>
             <p>
               <strong>Importante:</strong> el Resaltador envía el PDF a un
               servidor para analizarlo. Es un servicio distinto de la Extensión,
-              que analiza los documentos de Google Docs en tu navegador.
+              que analiza los documentos de Google Docs en tu navegador sin IA.
+              Es posible que aquí usemos una IA, por lo cual tu PDF no debería
+              exponer datos sensibles.
             </p>
           </div>
         </section>
@@ -139,9 +155,25 @@ export default function ResaltadorPage() {
           <div class="visor-header">
             <div>
               <span class="resaltador-kicker">Vista del documento</span>
-              <h2>Hallazgos sobre el PDF original.</h2>
+              <h2>Hallazgos.</h2>
             </div>
             <div class="visor-controls">
+              <div class="visor-zoom-controls">
+                <button
+                  type="button"
+                  data-visor-zoom-out
+                  aria-label="Alejar el PDF"
+                >
+                  −
+                </button>
+                <button
+                  type="button"
+                  data-visor-zoom-in
+                  aria-label="Acercar el PDF"
+                >
+                  +
+                </button>
+              </div>
               <button
                 type="button"
                 class="btn btn-primary visor-download"
@@ -150,8 +182,6 @@ export default function ResaltadorPage() {
               >
                 Descargar PDF anotado
               </button>
-              <button type="button" data-visor-zoom-out aria-label="Alejar el PDF">−</button>
-              <button type="button" data-visor-zoom-in aria-label="Acercar el PDF">+</button>
               <p role="status" data-visor-status></p>
               <button
                 type="button"
@@ -163,69 +193,16 @@ export default function ResaltadorPage() {
               </button>
             </div>
           </div>
+          <div class="visor-loading" data-visor-loading role="status" hidden>
+            <span class="visor-loading-spinner" aria-hidden="true"></span>
+            <p>Analizando el PDF…</p>
+          </div>
           <p class="visor-scanned" data-visor-scanned hidden></p>
-          <ul class="visor-counts" data-visor-counts></ul>
           <div class="visor-layout">
             <div class="visor-pages" data-visor-pages></div>
             <aside class="visor-detail" data-visor-detail aria-live="polite">
-              <p>Elegí un resaltado para ver la Regla y su sugerencia.</p>
+              <p>Los hallazgos aparecerán acá cuando termine el análisis.</p>
             </aside>
-          </div>
-        </section>
-
-        <section class="wrap resaltador-section">
-          <div class="resaltador-section-header">
-            <span class="resaltador-kicker">01 — El resultado</span>
-            <div>
-              <h2>El mismo PDF, con una guía de lectura.</h2>
-              <p>
-                El contenido y el diseño del documento se conservan. Las
-                anotaciones ayudan a revisar cada Hallazgo sin salir del PDF.
-              </p>
-            </div>
-          </div>
-          <div class="resaltador-results">
-            <article>
-              <span class="resaltador-number">01</span>
-              <h3>Hallazgos en contexto</h3>
-              <p>
-                Cada resaltado señala el tramo de texto que activó una Regla y
-                usa el color de esa Regla.
-              </p>
-            </article>
-            <article>
-              <span class="resaltador-number">02</span>
-              <h3>Sugerencias claras</h3>
-              <p>
-                La página de hallazgos reúne el término original, la Regla y
-                las sugerencias para su revisión.
-              </p>
-            </article>
-            <article>
-              <span class="resaltador-number">03</span>
-              <h3>Páginas sin texto</h3>
-              <p>
-                Si el PDF incluye una Página sin texto, se informa para que
-                puedas distinguirla de las páginas analizadas.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="resaltador-difference">
-          <div class="wrap resaltador-difference-inner">
-            <span class="resaltador-kicker">02 — Dos servicios</span>
-            <div>
-              <h2>Para PDF, un análisis más profundo.</h2>
-              <p>
-                El Resaltador trabaja sobre un Documento Analizado. Eso permite
-                revisar Reglas que necesitan entender la estructura de una
-                oración, además de las expresiones que se detectan en el texto.
-              </p>
-              <a class="resaltador-link" href="index.html#comparacion">
-                Conocé la Extensión <span aria-hidden="true">→</span>
-              </a>
-            </div>
           </div>
         </section>
       </main>
