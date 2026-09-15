@@ -46,21 +46,55 @@ function nombreDeCategoria(nombre) {
   return nombre === "Número escrito con palabras" ? "Número con palabras" : nombre;
 }
 
+function appendSuggestions(detail, suggestions, label) {
+  if (suggestions.length === 1) {
+    const suggestion = document.createElement("p");
+    suggestion.className = "visor-suggestion";
+    suggestion.append(`${label}: `);
+    const option = document.createElement("strong");
+    option.textContent = suggestions[0];
+    suggestion.append(option);
+    detail.append(suggestion);
+    return;
+  }
+
+  const suggestionLabel = document.createElement("p");
+  suggestionLabel.className = "visor-suggestion";
+  suggestionLabel.textContent = `${label === "Sugerencia" ? "Sugerencias" : label}:`;
+  const options = document.createElement("ul");
+  options.className = "visor-suggestions";
+  for (const suggestionText of suggestions) {
+    const option = document.createElement("li");
+    const suggestion = document.createElement("strong");
+    suggestion.textContent = suggestionText;
+    option.append(suggestion);
+    options.append(option);
+  }
+  detail.append(suggestionLabel, options);
+}
+
 function renderHallazgoDetail(detail, hallazgo) {
   detail.replaceChildren();
   if (!hallazgo) return;
   const title = document.createElement("h3");
   title.textContent = nombreDeCategoria(hallazgo.nombre);
-  const description = document.createElement("p");
-  description.textContent = hallazgo.descripcion;
-  detail.append(title, description);
-  // La descripción de varias reglas ya trae la sugerencia citada
-  // (`Reemplazar por "X".`); mostrarla de nuevo acá sería redundante.
-  if (hallazgo.sugerencias.length && !hallazgo.descripcion.includes(hallazgo.sugerencias[0])) {
-    const suggestions = document.createElement("p");
-    suggestions.className = "visor-suggestion";
-    suggestions.textContent = `Sugerencia: ${hallazgo.sugerencias.join(" · ")}`;
-    detail.append(suggestions);
+  const isReplacement = /^Reemplazar por ["“].+["”]\.$/.test(
+    hallazgo.descripcion,
+  );
+  detail.append(title);
+
+  if (!isReplacement) {
+    const description = document.createElement("p");
+    description.textContent = hallazgo.descripcion;
+    detail.append(description);
+  }
+
+  if (hallazgo.sugerencias.length) {
+    appendSuggestions(
+      detail,
+      hallazgo.sugerencias,
+      isReplacement ? "Reemplazar por" : "Sugerencia",
+    );
   }
 }
 
