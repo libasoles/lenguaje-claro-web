@@ -58,6 +58,7 @@ function renderHallazgoDetail(detail, hallazgo) {
   // (`Reemplazar por "X".`); mostrarla de nuevo acá sería redundante.
   if (hallazgo.sugerencias.length && !hallazgo.descripcion.includes(hallazgo.sugerencias[0])) {
     const suggestions = document.createElement("p");
+    suggestions.className = "visor-suggestion";
     suggestions.textContent = `Sugerencia: ${hallazgo.sugerencias.join(" · ")}`;
     detail.append(suggestions);
   }
