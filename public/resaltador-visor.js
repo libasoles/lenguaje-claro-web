@@ -16,6 +16,17 @@ const PDFJS_WORKER_URL = new URL("vendor/pdfjs/pdf.worker.min.mjs", import.meta.
 // margen para responder antes de que el cliente lo dé por perdido.
 const TIMEOUT_DE_ANALISIS_MS = 130_000;
 
+// Mensajes que van rotando mientras esperamos la respuesta del servidor.
+// No reflejan pasos reales (el servidor no informa progreso): son para que
+// la espera se sienta activa en vez de una barra de carga congelada.
+const PASOS_DE_ANALISIS = [
+  "Leyendo el documento…",
+  "Buscando voz pasiva y arcaísmos…",
+  "Detectando lenguaje ambiguo…",
+  "Marcando los hallazgos…",
+  "Preparando el PDF anotado…",
+];
+
 let pdfjsLibPromise;
 
 function loadPdfjs() {
@@ -31,11 +42,15 @@ function setText(element, text) {
   element.textContent = text || "";
 }
 
+function nombreDeCategoria(nombre) {
+  return nombre === "Número escrito con palabras" ? "Número con palabras" : nombre;
+}
+
 function renderHallazgoDetail(detail, hallazgo) {
   detail.replaceChildren();
   if (!hallazgo) return;
   const title = document.createElement("h3");
-  title.textContent = hallazgo.nombre;
+  title.textContent = nombreDeCategoria(hallazgo.nombre);
   const description = document.createElement("p");
   description.textContent = hallazgo.descripcion;
   detail.append(title, description);
@@ -71,7 +86,7 @@ function renderHallazgosSummary(detail, hallazgos) {
   for (const group of grouped.values()) {
     const item = document.createElement("li");
     item.style.setProperty("--hallazgo-color", group[0].color);
-    item.textContent = `${group[0].nombre}: ${group.length}`;
+    item.textContent = `${nombreDeCategoria(group[0].nombre)}: ${group.length}`;
     list.append(item);
   }
   detail.append(list);
@@ -112,6 +127,7 @@ function init() {
   const detail = root.querySelector("[data-visor-detail]");
   const scanned = root.querySelector("[data-visor-scanned]");
   const loading = root.querySelector("[data-visor-loading]");
+  const loadingStep = root.querySelector("[data-visor-loading-step]");
   const downloadButton = root.querySelector("[data-visor-download]");
   const retryButton = root.querySelector("[data-visor-retry]");
   const endpoint = endpointFor(window.location, root.dataset.endpoint);
@@ -120,6 +136,21 @@ function init() {
   let scale = 1.35;
   let archivoActual = null;
   let descargaActual = null; // { bytes, nombre }
+  let pasoIntervalId = null;
+
+  function iniciarPasosDeAnalisis() {
+    let index = 0;
+    loadingStep.textContent = PASOS_DE_ANALISIS[0];
+    pasoIntervalId = setInterval(() => {
+      index = (index + 1) % PASOS_DE_ANALISIS.length;
+      loadingStep.textContent = PASOS_DE_ANALISIS[index];
+    }, 2200);
+  }
+
+  function detenerPasosDeAnalisis() {
+    clearInterval(pasoIntervalId);
+    pasoIntervalId = null;
+  }
 
   function rerenderPages() {
     if (!pdfActual) return;
@@ -170,6 +201,7 @@ function init() {
 
   function mostrarErrorDeServidor(codigo) {
     const estado = estadoDeErrorServidor(codigo);
+    detenerPasosDeAnalisis();
     loading.hidden = true;
     setText(status, estado.mensaje);
     retryButton.hidden = !estado.reintentable;
@@ -188,6 +220,11 @@ function init() {
     loading.hidden = false;
     setText(status, "");
     setText(scanned, "");
+    iniciarPasosDeAnalisis();
+    // Movemos el foco a esta sección apenas arranca el análisis: si
+    // esperáramos a que termine, el loading quedaría fuera del viewport
+    // mientras el usuario sigue mirando el uploader.
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
 
     let response;
     const timeoutController = new AbortController();
@@ -276,9 +313,9 @@ function init() {
       pages.append(shell);
       observer.observe(shell);
     }
+    detenerPasosDeAnalisis();
     loading.hidden = true;
     setText(status, "");
-    root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   window.addEventListener("resaltador:file-ready", (event) => {

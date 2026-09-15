@@ -194,8 +194,17 @@ export default function ResaltadorPage() {
             </div>
           </div>
           <div class="visor-loading" data-visor-loading role="status" hidden>
-            <span class="visor-loading-spinner" aria-hidden="true"></span>
-            <p>Analizando el PDF…</p>
+            <div class="visor-loading-doc" aria-hidden="true">
+              <span class="visor-loading-doc-line"></span>
+              <span class="visor-loading-doc-line"></span>
+              <span class="visor-loading-doc-line"></span>
+              <span class="visor-loading-doc-line short"></span>
+              <span class="visor-loading-beam"></span>
+            </div>
+            <p class="visor-loading-title">Analizando el PDF…</p>
+            <p class="visor-loading-step" data-visor-loading-step>
+              Leyendo el documento…
+            </p>
           </div>
           <p class="visor-scanned" data-visor-scanned hidden></p>
           <div class="visor-layout">
